@@ -17,11 +17,6 @@ Over the next three days, you will gain the skills needed to harness the power o
 
 We are looking forward to this exciting journey with you into the world of generative AI!
 
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
-
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
