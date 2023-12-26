@@ -1,4 +1,4 @@
-## Fidelity Generative AI Bootcamp
+##  Generative AI Bootcamp
 
 Welcome to the Generative AI Bootcamp! Happy New Year ! In this 3 days in-person event, you will gain hands-on experience with the latest techniques in generative AI using Amazon Bedrock, Amazon SageMaker and other AWS services.
 
