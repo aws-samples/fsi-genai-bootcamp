@@ -11,6 +11,31 @@ from langchain.document_loaders import PyPDFLoader
 from langchain.document_loaders import UnstructuredPDFLoader
 from langchain.text_splitter import CharacterTextSplitter
 
+# from IPython.display import Markdown, display
+
+import json
+import os
+import sys
+
+import boto3
+import botocore
+sys.path.append("/home/sagemaker-user/fsi-genai-bootcamp/")
+    # print(os.path.abspath(module_path))
+from utils import bedrock, print_ww
+
+def get_client():
+    # module_path = ".."
+    # sys.path.append(os.path.abspath(module_path))
+
+    #Since the Lab accounts provisioned for this workshop doesn't have access to Bedrock Models, the role "aws:iam::067564772063:role/Crossaccountbedrock" is added to inherit  Bedrock Model Access from the Parent Account which has access to Bedrock. If you running in your own account and you can follow through the bedrock "model management section" and can request access for the specific models.
+    os.environ["BEDROCK_ASSUME_ROLE"] = "arn:aws:iam::067564772063:role/Crossaccountbedrock"  # E.g. "arn:aws:..."
+
+
+    boto3_bedrock = bedrock.get_bedrock_client(
+        assumed_role=os.environ.get("BEDROCK_ASSUME_ROLE", None),
+        region=os.environ.get("AWS_DEFAULT_REGION", None)
+    )
+    return boto3_bedrock
 
 
 def get_llm():
@@ -19,6 +44,11 @@ def get_llm():
         "max_tokens_to_sample": 8000, 
         "temperature": 0, 
     }
+    llm = Bedrock(
+    client=get_client(),
+    model_id="anthropic.claude-instant-v1",
+    model_kwargs={"max_tokens_to_sample": 500, "temperature": 0.9}
+    )
     
     '''
     llm = Bedrock(
@@ -28,12 +58,14 @@ def get_llm():
         model_id="anthropic.claude-v2", #set the foundation model
         model_kwargs=model_kwargs) #configure the properties for Claude
     '''
-    llm = Bedrock(
-        credentials_profile_name=os.environ.get("BWB_PROFILE_NAME"), #sets the profile name to use for AWS credentials (if not the default)
-        region_name=os.environ.get("BWB_REGION_NAME"), #sets the region name (if not the default)
-        endpoint_url=os.environ.get("BWB_ENDPOINT_URL"), #sets the endpoint URL (if necessary)
-        model_id="anthropic.claude-v2", #set the foundation model
-        model_kwargs=model_kwargs) #configure the properties for Claude
+        # llm = Bedrock(
+        # client=get
+        # credentials_profile_name=os.environ.get("BWB_PROFILE_NAME"), #sets the profile name to use for AWS credentials (if not the default)
+        # region_name=os.environ.get("BWB_REGION_NAME"), #sets the region name (if not the default)
+        # endpoint_url=os.environ.get("BWB_ENDPOINT_URL"), #sets the endpoint URL (if necessary)
+        # model_id="anthropic.claude-v2", #set the foundation model
+        # model_kwargs=model_kwargs) #configure the properties for Claude
+     
     
     return llm
 
@@ -41,12 +73,13 @@ def get_llm():
 
 def get_index(file_name): #creates and returns an in-memory vector store to be used in the application
     
-    embeddings = BedrockEmbeddings(
-        credentials_profile_name=os.environ.get("BWB_PROFILE_NAME"), #sets the profile name to use for AWS credentials (if not the default)
-        region_name=os.environ.get("BWB_REGION_NAME"), #sets the region name (if not the default)
-        endpoint_url=os.environ.get("BWB_ENDPOINT_URL"), #sets the endpoint URL (if necessary)
-    ) #create a Titan Embeddings client
+#     embeddings = BedrockEmbeddings(
+#         credentials_profile_name=os.environ.get("BWB_PROFILE_NAME"), #sets the profile name to use for AWS credentials (if not the default)
+#         region_name=os.environ.get("BWB_REGION_NAME"), #sets the region name (if not the default)
+#         endpoint_url=os.environ.get("BWB_ENDPOINT_URL"), #sets the endpoint URL (if necessary)
+#     ) #create a Titan Embeddings client
     
+    embeddings = BedrockEmbeddings(client=get_client(), model_id="amazon.titan-embed-text-v1")
     #pdf_path = '/Users/evikram/Documents/github/amazon-bedrock-workshop/fmr-anthropic-demo/index_docs' #assumes local PDF file with this name
 
     loader = PyPDFLoader(file_path=file_name) #load the pdf file
