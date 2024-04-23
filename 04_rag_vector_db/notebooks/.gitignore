@@ -1,0 +1,4 @@
+local_config.json
+section_doc_store_*.pkl 
+section_vector_store_*.pkl
+bedrock-workshop-rag-index-*.pkl

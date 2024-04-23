@@ -8,3 +8,6 @@ __pycache__/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# sqlite database files
+*.db
