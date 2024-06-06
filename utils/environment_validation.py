@@ -60,7 +60,7 @@ def install_libraries(libraries):
             return f"Failed to install {library}. Error: {str(e)}"
 
 
-def validate_environment():
+def validate_environment(requirements_file="requirements.txt"):
 
     print("Validating base environment")
     base_installed, base_not_installed = validate_libraries(BASE_ENV)
@@ -75,7 +75,7 @@ def validate_environment():
     )
 
     try:
-        requirements = Path("requirements.txt").open().read().strip().split("\n")
+        requirements = Path(requirements_file).open().read().strip().split("\n")
     except FileNotFoundError:
         rprint(
             "[#ef233c]requirements.txt file not found. Please make sure the file exists in the current directory.[/#ef233c]"
