@@ -17,7 +17,6 @@ import os
 import sys
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, NewType, Optional, Tuple
-import argparse
 
 import transformers
 from transformers import MODEL_FOR_CAUSAL_LM_MAPPING, HfArgumentParser
@@ -58,6 +57,7 @@ class H4ArgumentParser(HfArgumentParser):
             inputs = {k: v for k, v in vars(data_yaml).items() if k in keys}
             for arg, val in other_args.items():
                 # add only if in keys
+
                 if arg in keys:
                     base_type = data_yaml.__dataclass_fields__[arg].type
                     inputs[arg] = val
@@ -88,8 +88,6 @@ class H4ArgumentParser(HfArgumentParser):
         return outputs
 
     def parse(self) -> DataClassType | Tuple[DataClassType]:
-
-        
         if len(sys.argv) == 2 and sys.argv[1].endswith(".yaml"):
             # If we pass only one argument to the script and it's the path to a YAML file,
             # let's parse it to get our arguments.
@@ -114,7 +112,7 @@ class ModelArguments:
 
     base_model_revision: Optional[str] = field(
         default=None,
-        metadata={"help": ("The base model checkpoint for weights initialization with PEFT adatpers.")},
+        metadata={"help": ("The base model checkpoint for weights initialization with PEFT adapters.")},
     )
     model_name_or_path: Optional[str] = field(
         default=None,
@@ -137,6 +135,14 @@ class ModelArguments:
                 "dtype will be automatically derived from the model's weights."
             ),
             "choices": ["auto", "bfloat16", "float16", "float32"],
+        },
+    )
+    tokenizer_name_or_path: Optional[str] = field(
+        default=None,
+        metadata={
+            "help": (
+                "The path to the tokenizer. Useful if you want to use a different tokenizer to the one stored in `model_name_or_path`."
+            )
         },
     )
     trust_remote_code: bool = field(default=False, metadata={"help": "Trust remote code when loading a model."})
@@ -179,6 +185,9 @@ class ModelArguments:
         default="nf4", metadata={"help": "precise the quantization type (fp4 or nf4)"}
     )
     use_bnb_nested_quant: bool = field(default=False, metadata={"help": "use nested quantization"})
+    bnb_4bit_quant_storage: Optional[str] = field(
+        default="uint8", metadata={"help": "storage type to pack the quanitzed 4-bit prarams."}
+    )
 
     def __post_init__(self):
         if self.load_in_8bit and self.load_in_4bit:
@@ -196,27 +205,17 @@ class DataArguments:
         default=None,
         metadata={"help": ("Datasets and their proportions to be used for training ift/rl.")},
     )
+    text_column: Optional[str] = field(
+        default="text",
+        metadata={"help": "The column name to use for the text in the dataset (only used for continued pretraining)."},
+    )
     dataset_splits: Optional[List[str]] = field(
         default_factory=lambda: ["train", "test"],
         metadata={"help": ("List of train test splits to use in the dataset")},
     )
-    max_train_samples: Optional[int] = field(
+    dataset_configs: Optional[List[str]] = field(
         default=None,
-        metadata={
-            "help": (
-                "For debugging purposes or quicker training, truncate the number of training examples to this "
-                "value if set."
-            )
-        },
-    )
-    max_eval_samples: Optional[int] = field(
-        default=None,
-        metadata={
-            "help": (
-                "For debugging purposes or quicker training, truncate the number of evaluation examples to this "
-                "value if set."
-            )
-        },
+        metadata={"help": "List of dataset config names. If given must be the same length as 'dataset_mixer' keys."},
     )
     preprocessing_num_workers: Optional[int] = field(
         default=None,
@@ -225,14 +224,26 @@ class DataArguments:
     truncation_side: Optional[str] = field(
         default=None, metadata={"help": "Truncation side to use for the tokenizer."}
     )
+    auto_insert_empty_system_msg: bool = field(
+        default=True,
+        metadata={
+            "help": (
+                "Whether to automatically insert an empty system message as the first message if `system` is mentioned in the chat template."
+            )
+        },
+    )
 
 
 @dataclass
 class SFTConfig(transformers.TrainingArguments):
     """
     Arguments related to the training process itself. For all parameters, see: https://huggingface.co/docs/transformers/v4.26.1/en/main_classes/trainer#transformers.TrainingArguments
+    Also used for the continued pretraining task.
     """
 
+    dataset_kwargs: Optional[Dict[str, Any]] = field(
+        default=None, metadata={"help": "Dataset kwargs for the SFTTrainer"}
+    )
     max_seq_length: Optional[int] = field(
         default=None,
         metadata={"help": ("Used by TRL for reward model training, which tries to read this parameter in init.")},
@@ -272,3 +283,63 @@ class DPOConfig(transformers.TrainingArguments):
     )
     optim: Optional[str] = field(default="rmsprop")
     remove_unused_columns: bool = field(default=False)
+    loss_type: Optional[str] = field(default="sigmoid", metadata={"help": ("The loss type for DPO.")})
+
+
+@dataclass
+class ORPOConfig(transformers.TrainingArguments):
+    max_length: Optional[int] = field(
+        default=None,
+        metadata={"help": "The maximum length of the sequences in the batch."},
+    )
+    max_prompt_length: Optional[int] = field(
+        default=None,
+        metadata={"help": "The maximum length of the prompt."},
+    )
+    max_completion_length: Optional[int] = field(
+        default=None,
+        metadata={"help": "The maximum length of the completions."},
+    )
+
+    beta: float = field(
+        default=0.1,
+        metadata={
+            "help": "The beta factor in ORPO loss (lambda/alpha in paper/code) that is the weight of the relative loss ratio in the SFT loss."
+        },
+    )
+    disable_dropout: bool = field(
+        default=True,
+        metadata={"help": "Whether or not to disable dropouts in `model`."},
+    )
+
+    label_pad_token_id: int = field(
+        default=-100,
+        metadata={"help": "The label pad token id."},
+    )
+    padding_value: Optional[int] = field(
+        default=None,
+        metadata={"help": "The padding value if it is different to the tokenizer's pad_token_id."},
+    )
+    truncation_mode: str = field(
+        default="keep_end",
+        metadata={"help": "The truncation mode to use, either `keep_end` or `keep_start`."},
+    )
+
+    generate_during_eval: bool = field(
+        default=False,
+        metadata={"help": "Whether to sample and log generations during evaluation step."},
+    )
+    is_encoder_decoder: Optional[bool] = field(
+        default=None,
+        metadata={"help": ("If no model is provided, we need to know if the model_init returns an encoder-decoder.")},
+    )
+
+    model_init_kwargs: Optional[Dict] = field(
+        default=None,
+        metadata={"help": ("Dict of Optional kwargs to pass when instantiating the model from a string")},
+    )
+
+    dataset_num_proc: Optional[int] = field(
+        default=None,
+        metadata={"help": ("The number of workers to use to tokenize the data.")},
+    )

@@ -41,30 +41,32 @@ if stale_egg_info.exists():
 # IMPORTANT: all dependencies should be listed here with their version requirements, if any.
 #   * If a dependency is fast-moving (e.g. transformers), pin to the exact version
 _deps = [
-    "accelerate==0.23.0",
-    "bitsandbytes==0.41.2.post2",
+    "accelerate>=0.29.2",
+    "bitsandbytes>=0.43.0",
     "black==23.1.0",
-    "datasets==2.14.6",
+    "datasets>=2.18.0",
     "deepspeed==0.12.2",
     "einops>=0.6.1",
     "evaluate==0.4.0",
     "flake8>=6.0.0",
     "hf-doc-builder>=0.4.0",
-    "huggingface-hub>=0.14.1,<1.0",
+    "hf_transfer>=0.1.4",
+    "huggingface-hub>=0.19.2,<1.0",
     "isort>=5.12.0",
     "ninja>=1.11.1",
     "numpy>=1.24.2",
     "packaging>=23.0",
     "parameterized>=0.9.0",
-    "peft==0.6.1",
+    "peft>=0.9.0",
     "protobuf<=3.20.2",  # Needed to avoid conflicts with `transformers`
     "pytest",
     "safetensors>=0.3.3",
+    "sentencepiece>=0.1.99",
     "scipy",
     "tensorboard",
-    "torch==2.1.0",
-    "transformers==4.35.0",
-    "trl==0.7.4",
+    "torch==2.1.2",
+    "transformers>=4.39.3",
+    "trl>=0.8.2",
     "jinja2>=3.0.0",
     "tqdm>=4.64.1",
 ]
@@ -97,6 +99,7 @@ install_requires = [
     deps["evaluate"],
     deps["datasets"],
     deps["deepspeed"],
+    deps["hf_transfer"],
     deps["huggingface-hub"],
     deps["jinja2"],
     deps["ninja"],
@@ -105,6 +108,7 @@ install_requires = [
     deps["peft"],
     deps["protobuf"],
     deps["safetensors"],
+    deps["sentencepiece"],
     deps["scipy"],
     deps["tensorboard"],
     deps["tqdm"],  # progress bars in model download and training scripts
@@ -114,7 +118,7 @@ install_requires = [
 
 setup(
     name="alignment-handbook",
-    version="0.2.0.dev0",  # expected format is one of x.y.z.dev0, or x.y.z.rc1 or x.y.z (no to dashes, yes to dots)
+    version="0.4.0.dev0",  # expected format is one of x.y.z.dev0, or x.y.z.rc1 or x.y.z (no to dashes, yes to dots)
     author="The Hugging Face team (past and future)",
     author_email="lewis@huggingface.co",
     description="The Alignment Handbook",

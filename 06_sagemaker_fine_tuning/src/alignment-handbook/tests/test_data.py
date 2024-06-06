@@ -13,11 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import unittest
+from copy import deepcopy
 
 import pytest
 from datasets import Dataset
+from transformers import AutoTokenizer
 
 from alignment import DataArguments, ModelArguments, apply_chat_template, get_datasets, get_tokenizer
+from alignment.data import maybe_insert_system_message
 
 
 class GetDatasetsTest(unittest.TestCase):
@@ -30,7 +33,7 @@ class GetDatasetsTest(unittest.TestCase):
             "HuggingFaceH4/testing_codealpaca_small": 0.2,
         }
         data_args = DataArguments(dataset_mixer=dataset_mixer)
-        datasets = get_datasets(data_args)
+        datasets = get_datasets(data_args, columns_to_keep=["prompt", "completion"])
         self.assertEqual(len(datasets["train"]), 100)
         self.assertEqual(len(datasets["test"]), 300)
 
@@ -40,7 +43,7 @@ class GetDatasetsTest(unittest.TestCase):
             "HuggingFaceH4/testing_self_instruct_small": 0.3,
             "HuggingFaceH4/testing_codealpaca_small": 0.2,
         }
-        datasets = get_datasets(dataset_mixer)
+        datasets = get_datasets(dataset_mixer, columns_to_keep=["prompt", "completion"])
         self.assertEqual(len(datasets["train"]), 100)
         self.assertEqual(len(datasets["test"]), 300)
 
@@ -50,7 +53,7 @@ class GetDatasetsTest(unittest.TestCase):
             "HuggingFaceH4/testing_self_instruct_small": 1.0,
             "HuggingFaceH4/testing_codealpaca_small": 1.0,
         }
-        datasets = get_datasets(dataset_mixer)
+        datasets = get_datasets(dataset_mixer, columns_to_keep=["prompt", "completion"])
         self.assertEqual(len(datasets["train"]), 300)
         self.assertEqual(len(datasets["test"]), 300)
 
@@ -59,7 +62,7 @@ class GetDatasetsTest(unittest.TestCase):
             "HuggingFaceH4/testing_alpaca_small": 0.7,
             "HuggingFaceH4/testing_self_instruct_small": 0.4,
         }
-        datasets = get_datasets(dataset_mixer)
+        datasets = get_datasets(dataset_mixer, columns_to_keep=["prompt", "completion"])
         self.assertEqual(len(datasets["train"]), 70 + 40)
         self.assertEqual(len(datasets["test"]), 200)
 
@@ -69,13 +72,13 @@ class GetDatasetsTest(unittest.TestCase):
             "HuggingFaceH4/testing_self_instruct_small": -0.3,
         }
         with pytest.raises(ValueError, match=r"Dataset fractions cannot be negative."):
-            get_datasets(dataset_mixer)
+            get_datasets(dataset_mixer, columns_to_keep=["prompt", "completion"])
 
     def test_loading_single_split_with_unit_fractions(self):
         dataset_mixer = {
             "HuggingFaceH4/testing_alpaca_small": 1.0,
         }
-        datasets = get_datasets(dataset_mixer, splits=["test"])
+        datasets = get_datasets(dataset_mixer, splits=["test"], columns_to_keep=["prompt", "completion"])
         self.assertEqual(len(datasets["test"]), 100)
         self.assertRaises(KeyError, lambda: datasets["train"])
 
@@ -88,11 +91,52 @@ class ApplyChatTemplateTest(unittest.TestCase):
         self.dataset = Dataset.from_dict(
             {
                 "prompt": ["Hello!"],
-                "messages": [[{"role": "user", "content": "Hello!"}, {"role": "assistant", "content": "Bonjour!"}]],
-                "chosen": [[{"role": "user", "content": "Hello!"}, {"role": "assistant", "content": "Bonjour!"}]],
-                "rejected": [[{"role": "user", "content": "Hello!"}, {"role": "assistant", "content": "Hola!"}]],
+                "messages": [
+                    [
+                        {"role": "system", "content": "You are a happy chatbot"},
+                        {"role": "user", "content": "Hello!"},
+                        {"role": "assistant", "content": "Bonjour!"},
+                        {"role": "user", "content": "How are you?"},
+                        {"role": "assistant", "content": "I am doing well, thanks!"},
+                    ]
+                ],
+                "chosen": [
+                    [
+                        {"role": "system", "content": "You are a happy chatbot"},
+                        {"role": "user", "content": "Hello!"},
+                        {"role": "assistant", "content": "Bonjour!"},
+                        {"role": "user", "content": "How are you?"},
+                        {"role": "assistant", "content": "I am doing well, thanks!"},
+                    ]
+                ],
+                "rejected": [
+                    [
+                        {"role": "system", "content": "You are a happy chatbot"},
+                        {"role": "user", "content": "Hello!"},
+                        {"role": "assistant", "content": "Bonjour!"},
+                        {"role": "user", "content": "How are you?"},
+                        {"role": "assistant", "content": "Not so good tbh"},
+                    ]
+                ],
             }
         )
+
+    def test_maybe_insert_system_message(self):
+        # does not accept system prompt
+        mistral_tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2")
+        # accepts system prompt. use codellama since it has no HF token reqiurement
+        llama_tokenizer = AutoTokenizer.from_pretrained("codellama/CodeLlama-7b-hf")
+        messages_sys_excl = [{"role": "user", "content": "Tell me a joke."}]
+        messages_sys_incl = [{"role": "system", "content": ""}, {"role": "user", "content": "Tell me a joke."}]
+
+        mistral_messages = deepcopy(messages_sys_excl)
+        llama_messages = deepcopy(messages_sys_excl)
+        maybe_insert_system_message(mistral_messages, mistral_tokenizer)
+        maybe_insert_system_message(llama_messages, llama_tokenizer)
+
+        # output from mistral should not have a system message, output from llama should
+        self.assertEqual(mistral_messages, messages_sys_excl)
+        self.assertEqual(llama_messages, messages_sys_incl)
 
     def test_sft(self):
         dataset = self.dataset.map(
@@ -102,7 +146,9 @@ class ApplyChatTemplateTest(unittest.TestCase):
         )
         self.assertDictEqual(
             dataset[0],
-            {"text": "<|system|>\n</s>\n<|user|>\nHello!</s>\n<|assistant|>\nBonjour!</s>\n"},
+            {
+                "text": "<|system|>\nYou are a happy chatbot</s>\n<|user|>\nHello!</s>\n<|assistant|>\nBonjour!</s>\n<|user|>\nHow are you?</s>\n<|assistant|>\nI am doing well, thanks!</s>\n"
+            },
         )
 
     def test_generation(self):
@@ -115,7 +161,9 @@ class ApplyChatTemplateTest(unittest.TestCase):
         )
         self.assertDictEqual(
             dataset[0],
-            {"text": "<|system|>\n</s>\n<|user|>\nHello!</s>\n<|assistant|>\n"},
+            {
+                "text": "<|system|>\nYou are a happy chatbot</s>\n<|user|>\nHello!</s>\n<|assistant|>\nBonjour!</s>\n<|user|>\nHow are you?</s>\n<|assistant|>\n"
+            },
         )
 
     def test_rm(self):
@@ -127,8 +175,8 @@ class ApplyChatTemplateTest(unittest.TestCase):
         self.assertDictEqual(
             dataset[0],
             {
-                "text_chosen": "<|system|>\n</s>\n<|user|>\nHello!</s>\n<|assistant|>\nBonjour!</s>\n",
-                "text_rejected": "<|system|>\n</s>\n<|user|>\nHello!</s>\n<|assistant|>\nHola!</s>\n",
+                "text_chosen": "<|system|>\nYou are a happy chatbot</s>\n<|user|>\nHello!</s>\n<|assistant|>\nBonjour!</s>\n<|user|>\nHow are you?</s>\n<|assistant|>\nI am doing well, thanks!</s>\n",
+                "text_rejected": "<|system|>\nYou are a happy chatbot</s>\n<|user|>\nHello!</s>\n<|assistant|>\nBonjour!</s>\n<|user|>\nHow are you?</s>\n<|assistant|>\nNot so good tbh</s>\n",
             },
         )
 
@@ -141,8 +189,8 @@ class ApplyChatTemplateTest(unittest.TestCase):
         self.assertDictEqual(
             dataset[0],
             {
-                "text_prompt": "<|system|>\n</s>\n<|user|>\nHello!</s>\n<|assistant|>\n",
-                "text_chosen": "Bonjour!</s>\n",
-                "text_rejected": "Hola!</s>\n",
+                "text_prompt": "<|system|>\nYou are a happy chatbot</s>\n<|user|>\nHello!</s>\n<|assistant|>\nBonjour!</s>\n<|user|>\nHow are you?</s>\n",
+                "text_chosen": "<|assistant|>\nI am doing well, thanks!</s>\n",
+                "text_rejected": "<|assistant|>\nNot so good tbh</s>\n",
             },
         )

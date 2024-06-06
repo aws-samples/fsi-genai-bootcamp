@@ -24,46 +24,41 @@ import sys
 import datasets
 import torch
 import transformers
-from transformers import set_seed
+from transformers import AutoModelForCausalLM, set_seed
 
-from accelerate import Accelerator
 from alignment import (
     DataArguments,
     H4ArgumentParser,
     ModelArguments,
     SFTConfig,
     apply_chat_template,
+    decontaminate_humaneval,
+    get_checkpoint,
     get_datasets,
     get_kbit_device_map,
     get_peft_config,
     get_quantization_config,
     get_tokenizer,
 )
-from trl import SFTTrainer
+from trl import SFTTrainer, setup_chat_format
 
 
 logger = logging.getLogger(__name__)
 
 
 def main():
-    
-    print(sys.argv)
-    
+
     if "--recipe" in sys.argv:
         index = sys.argv.index("--recipe")
         recipe_path = sys.argv.pop(index + 1)  # Get and remove the value for "--recipe"
         sys.argv.pop(index)  # Remove "--recipe"
         sys.argv.insert(1, recipe_path)  # Insert the value at position 1
-    
-    print(sys.argv)
-    
+
     parser = H4ArgumentParser((ModelArguments, DataArguments, SFTConfig))
     model_args, data_args, training_args = parser.parse()
 
     # Set seed for reproducibility
     set_seed(training_args.seed)
-
-    accelerator = Accelerator()
 
     ###############
     # Setup logging
@@ -89,36 +84,45 @@ def main():
     logger.info(f"Data parameters {data_args}")
     logger.info(f"Training/evaluation parameters {training_args}")
 
+    # Check for last checkpoint
+    last_checkpoint = get_checkpoint(training_args)
+    if last_checkpoint is not None and training_args.resume_from_checkpoint is None:
+        logger.info(f"Checkpoint detected, resuming training at {last_checkpoint=}.")
+
     ###############
     # Load datasets
     ###############
-    raw_datasets = get_datasets(data_args, splits=data_args.dataset_splits)
+    raw_datasets = get_datasets(
+        data_args,
+        splits=data_args.dataset_splits,
+        configs=data_args.dataset_configs,
+        columns_to_keep=[
+            "messages",
+            "chosen",
+            "rejected",
+            "prompt",
+            "completion",
+            "label",
+        ],
+    )
     logger.info(
         f"Training on the following datasets and their proportions: {[split + ' : ' + str(dset.num_rows) for split, dset in raw_datasets.items()]}"
     )
+    column_names = list(raw_datasets["train"].features)
 
     ################
     # Load tokenizer
     ################
     tokenizer = get_tokenizer(model_args, data_args)
 
-    #####################
-    # Apply chat template
-    #####################
-    raw_datasets = raw_datasets.map(apply_chat_template, fn_kwargs={"tokenizer": tokenizer, "task": "sft"})
-    train_dataset = raw_datasets["train"]
-    eval_dataset = raw_datasets["test"]
-
-    with training_args.main_process_first(desc="Log a few random samples from the processed training set"):
-        for index in random.sample(range(len(raw_datasets["train"])), 3):
-            logger.info(f"Sample {index} of the processed training set:\n\n{raw_datasets['train'][index]['text']}")
-
     #######################
     # Load pretrained model
     #######################
     logger.info("*** Load pretrained model ***")
     torch_dtype = (
-        model_args.torch_dtype if model_args.torch_dtype in ["auto", None] else getattr(torch, model_args.torch_dtype)
+        model_args.torch_dtype
+        if model_args.torch_dtype in ["auto", None]
+        else getattr(torch, model_args.torch_dtype)
     )
     quantization_config = get_quantization_config(model_args)
 
@@ -131,13 +135,62 @@ def main():
         device_map=get_kbit_device_map() if quantization_config is not None else None,
         quantization_config=quantization_config,
     )
-    logger.info("*** Model loaded! ***")
+
+    model = model_args.model_name_or_path
+    # For ChatML we need to add special tokens and resize the embedding layer
+    if (
+        "<|im_start|>" in tokenizer.chat_template
+        and "gemma-tokenizer-chatml" not in tokenizer.name_or_path
+    ):
+        model = AutoModelForCausalLM.from_pretrained(
+            model_args.model_name_or_path, **model_kwargs
+        )
+        model, tokenizer = setup_chat_format(model, tokenizer)
+        model_kwargs = None
+
+    #####################
+    # Apply chat template
+    #####################
+    raw_datasets = raw_datasets.map(
+        apply_chat_template,
+        fn_kwargs={
+            "tokenizer": tokenizer,
+            "task": "sft",
+            "auto_insert_empty_system_msg": data_args.auto_insert_empty_system_msg,
+        },
+        num_proc=data_args.preprocessing_num_workers,
+        remove_columns=column_names,
+        desc="Applying chat template",
+    )
+
+    ##########################
+    # Decontaminate benchmarks
+    ##########################
+    num_raw_train_samples = len(raw_datasets["train"])
+    raw_datasets = raw_datasets.filter(
+        decontaminate_humaneval, batched=True, batch_size=10_000, num_proc=1
+    )
+    num_filtered_train_samples = num_raw_train_samples - len(raw_datasets["train"])
+    logger.info(
+        f"Decontaminated {num_filtered_train_samples} ({num_filtered_train_samples/num_raw_train_samples * 100:.2f}%) samples from the training set."
+    )
+
+    train_dataset = raw_datasets["train"]
+    eval_dataset = raw_datasets["test"]
+
+    with training_args.main_process_first(
+        desc="Log a few random samples from the processed training set"
+    ):
+        for index in random.sample(range(len(raw_datasets["train"])), 3):
+            logger.info(
+                f"Sample {index} of the processed training set:\n\n{raw_datasets['train'][index]['text']}"
+            )
 
     ########################
     # Initialize the Trainer
     ########################
     trainer = SFTTrainer(
-        model=model_args.model_name_or_path,
+        model=model,
         model_init_kwargs=model_kwargs,
         args=training_args,
         train_dataset=train_dataset,
@@ -147,30 +200,24 @@ def main():
         tokenizer=tokenizer,
         packing=True,
         peft_config=get_peft_config(model_args),
+        dataset_kwargs=training_args.dataset_kwargs,
     )
 
     ###############
     # Training loop
     ###############
     logger.info("*** Train ***")
-    train_result = trainer.train()
+    checkpoint = None
+    if training_args.resume_from_checkpoint is not None:
+        checkpoint = training_args.resume_from_checkpoint
+    elif last_checkpoint is not None:
+        checkpoint = last_checkpoint
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
     metrics = train_result.metrics
-    max_train_samples = data_args.max_train_samples if data_args.max_train_samples is not None else len(train_dataset)
-    metrics["train_samples"] = min(max_train_samples, len(train_dataset))
+    metrics["train_samples"] = len(train_dataset)
     trainer.log_metrics("train", metrics)
     trainer.save_metrics("train", metrics)
     trainer.save_state()
-
-    ##########
-    # Evaluate
-    ##########
-    if training_args.do_eval:
-        logger.info("*** Evaluate ***")
-        metrics = trainer.evaluate()
-        max_eval_samples = data_args.max_eval_samples if data_args.max_eval_samples is not None else len(eval_dataset)
-        metrics["eval_samples"] = min(max_eval_samples, len(eval_dataset))
-        trainer.log_metrics("eval", metrics)
-        trainer.save_metrics("eval", metrics)
 
     ##################################
     # Save model and create model card
@@ -180,23 +227,33 @@ def main():
     logger.info(f"Model saved to {training_args.output_dir}")
 
     # Save everything else on main process
-    if accelerator.is_main_process:
-        kwargs = {
-            "finetuned_from": model_args.model_name_or_path,
-            "dataset": list(data_args.dataset_mixer.keys()),
-            "dataset_tags": list(data_args.dataset_mixer.keys()),
-            "tags": ["alignment-handbook"],
-        }
+    kwargs = {
+        "finetuned_from": model_args.model_name_or_path,
+        "dataset": list(data_args.dataset_mixer.keys()),
+        "dataset_tags": list(data_args.dataset_mixer.keys()),
+        "tags": ["alignment-handbook"],
+    }
+    if trainer.accelerator.is_main_process:
         trainer.create_model_card(**kwargs)
         # Restore k,v cache for fast inference
         trainer.model.config.use_cache = True
         trainer.model.config.save_pretrained(training_args.output_dir)
 
-        if training_args.push_to_hub is True:
-            logger.info("Pushing to hub...")
-            trainer.push_to_hub()
+    ##########
+    # Evaluate
+    ##########
+    if training_args.do_eval:
+        logger.info("*** Evaluate ***")
+        metrics = trainer.evaluate()
+        metrics["eval_samples"] = len(eval_dataset)
+        trainer.log_metrics("eval", metrics)
+        trainer.save_metrics("eval", metrics)
 
-    accelerator.wait_for_everyone()
+    if training_args.push_to_hub is True:
+        logger.info("Pushing to hub...")
+        trainer.push_to_hub(**kwargs)
+
+    logger.info("*** Training complete ***")
 
 
 if __name__ == "__main__":
