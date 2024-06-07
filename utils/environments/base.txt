@@ -1,4 +1,5 @@
 boto3>=1.28.57
 awscli>=1.29.57
 botocore>=1.31.57
+pydantic>2
 rich
