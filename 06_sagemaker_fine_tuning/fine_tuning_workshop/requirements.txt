@@ -1,0 +1,10 @@
+beautifulsoup4
+lxml
+langchain==0.2.2
+langchain-core==0.2.2
+langchain-aws==0.1.6
+faiss-cpu==1.8.0
+rank_bm25
+ragas==0.1.9
+sagemaker>=2.221.0
+seaborn
