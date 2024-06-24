@@ -58,6 +58,76 @@ def prompts_to_messages(prompts: Union[str, List[dict]]) -> List[dict]:
     return messages
 
 
+def prompts_to_messages_converse(prompts: Union[str, List[dict]]) -> List[dict]:
+    """
+    Converts a single prompt or a list of prompts to a list of messages.
+
+    This function takes either a string or a list of dictionaries as input.
+    If the input is a string, it converts it into a dictionary with the role as 'user' and the content as the input string.
+    If the input is a list of dictionaries, it iterates over each dictionary (prompt) and converts the prompts into messages.
+    Each dictionary (prompt) should have the following keys:
+    - role: user or assistant
+    - text_prompt: The text prompt for the role
+    - image_prompt: optional image prompt for the role
+    Examples:
+    [{"role": "user", "text_prompt": "Hello, how are you?"}, {"role": "assistant", "text_prompt": "I am doing..."]
+    [{"role": "user", "text_prompt": "Describe this image", "image_prompt": "base64 encoded image"}]
+
+    Parameters:
+    prompts (Union[str, List[dict]]): A single prompt as a string or a list of prompts as dictionaries.
+
+    Returns:
+    List[dict]: A list of messages where each message is a dictionary with 'role' and 'content'.
+    """
+
+    if type(prompts) == str:
+        return [{"role": "user", "content": [{"text": prompts}]}]
+
+    messages = []
+
+    for prompt in prompts:
+
+        role = prompt["role"]
+
+        if "tool_use_id" in prompt:
+            tool_use_id = prompt["tool_use_id"]
+            tool_response = prompt["text_prompt"]
+            tool_status = prompt["tool_status"]
+
+            content = [
+                {
+                    "toolResult": {
+                        "toolUseId": tool_use_id,
+                        "content": [{"text": tool_response}],
+                        "status": tool_status,
+                    }
+                }
+            ]
+
+        else:
+            content = [{"text": prompt["text_prompt"]}]
+
+        if prompt.get("image_prompt", None):
+
+            image = prompt["image_prompt"]
+            text = prompt["text_prompt"]
+            content = [
+                {"type": "text", "text": text},
+                {
+                    "type": "image",
+                    "source": {
+                        "type": "base64",
+                        "media_type": "image/jpeg",
+                        "data": image,
+                    },
+                },
+            ]
+
+        messages.append({"role": role, "content": content})
+
+    return messages
+
+
 def convert_pdf_to_image(doc, page_number=0, dpi=150):
 
     page = doc.load_page(page_number)  # number of page
