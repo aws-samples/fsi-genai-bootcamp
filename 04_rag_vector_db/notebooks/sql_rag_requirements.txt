@@ -1,0 +1,5 @@
+duckdb
+duckdb-engine
+vanna[chromadb,duckdb]
+scikit-learn
+boto3>=1.34.144
