@@ -1,5 +1,7 @@
 ##  Generative AI for Financial Services Workshop
 
+Follow [here](https://catalog.us-east-1.prod.workshops.aws/workshops/4ce748f8-5965-46a8-8d9e-1247d9052cbf/en-US) for detailed instructions for getting started. 
+
 Welcome to the Generative AI Bootcamp! In this workshop you will gain hands-on experience with the latest techniques in generative AI using Amazon Bedrock, Amazon SageMaker and other AWS services.
 
 Generative AI is one of the most exciting and rapidly evolving fields in technology today. Foundation Models(FMs) are capturing the world's imagination with their ability to generate human-like text, images, and more from short text prompts.
