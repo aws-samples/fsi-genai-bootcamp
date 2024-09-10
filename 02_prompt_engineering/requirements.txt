@@ -1,5 +1,5 @@
-langchain==0.1.14
-langchain-aws
+langchain==0.2.16
+langchain-aws==0.1.18
 sqlalchemy
 pypdf>=3.8,<4
 datasets
@@ -7,6 +7,6 @@ matplotlib
 pymupdf 
 xmltodict==0.13.0
 duckduckgo-search
-yfinance
+yfinance==0.2.40
 pandas_datareader
 pysqlite3
