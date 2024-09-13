@@ -1,7 +1,7 @@
 Pillow==9.4.0
 streamlit==1.27.0
 streamlit-chat==0.1.1
-langchain==0.1.14
+langchain-core==0.2.39
 langchain-aws
 faiss-cpu>=1.7,<2
 unstructured==0.10.16
