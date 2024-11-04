@@ -1,8 +1,11 @@
 Pillow==9.4.0
 streamlit==1.27.0
 streamlit-chat==0.1.1
-langchain-core==0.2.39
-langchain-aws
+langchain==0.3.7
+langchain-aws==0.2.6
+langchain-community==0.3.5
+langchain-core==0.3.15
+langchain-text-splitters==0.3.2
 faiss-cpu>=1.7,<2
 unstructured==0.10.16
 SQLAlchemy==2.0.21
