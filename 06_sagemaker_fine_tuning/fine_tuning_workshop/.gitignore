@@ -7,3 +7,4 @@ base_evaluation.json
 baseline_rag_vec_db.pkl
 endpoint_config.json
 mymodel.tar.gz
+mlflow_config.json
