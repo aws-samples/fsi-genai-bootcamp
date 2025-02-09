@@ -4,6 +4,6 @@ langchain==0.3.5
 langchain-aws==0.2.11
 faiss-cpu==1.8.0
 rank_bm25
-ragas==0.1.16
 sagemaker>=2.239.0
 seaborn
+sagemaker-mlflow
