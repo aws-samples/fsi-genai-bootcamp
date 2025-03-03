@@ -10,6 +10,8 @@ matplotlib
 pymupdf 
 xmltodict==0.13.0
 duckduckgo-search
-yfinance==0.2.40
+yfinance>=0.2.54
 pandas_datareader
 pysqlite3
+smolagents==1.9.2
+litellm==1.61.15
