@@ -1,0 +1,6 @@
+boto3==1.37.9
+botocore==1.37.9
+smolagents==1.9.2
+litellm==1.61.15
+yfinance>=0.2.54
+pandas_datareader
