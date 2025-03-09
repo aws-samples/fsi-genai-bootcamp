@@ -1,7 +1,6 @@
 crewai==0.102.0
 crewai-tools==0.36.0
 langchain-community==0.3.19
-boto3
 ragas==0.2.14
 langchain-aws==0.2.15
 langchain==0.3.20
