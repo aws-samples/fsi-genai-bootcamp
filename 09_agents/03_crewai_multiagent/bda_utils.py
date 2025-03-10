@@ -76,7 +76,7 @@ def create_bda_project(project_name: str, project_description: str):
         )
     except botocore.exceptions.ClientError as e:
         if e.response["Error"]["Code"] == "ConflictException":
-            print("Project already exists")
+            print("Using existing Data Automation project")
             return get_bda_project_arn(project_name)
         else:
             raise e
