@@ -127,7 +127,7 @@ def process_bda(
     response = BDA_CLIENT.list_data_automation_projects(
     maxResults=3,
     projectStageFilter='LIVE')
-    data_automation_project_arn = [project['projectArn'] for project in response['projects'] if project['projectName'] == 'doc_processing_project']
+    data_automation_project_arn = [project['projectArn'] for project in response['projects'] if project['projectName'] == 'doc_processing_project'][0]
 
     input_file_s3_uri = upload_file_to_s3(local_file_path, s3_bucket, s3_input_prefix)
     output_s3_uri = f"s3://{s3_bucket}/{s3_output_prefix}"
