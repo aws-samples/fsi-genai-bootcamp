@@ -30,77 +30,77 @@ def get_bda_project_arn(project_name: str) -> Optional[str]:
     return project_arn
 
 
-# def create_bda_project(project_name: str, project_description: str):
+def create_bda_project(project_name: str, project_description: str):
 
-#     try:
-#         response = BDA_CLIENT.create_data_automation_project(
-#             projectName=project_name,
-#             projectDescription=project_description,
-#             standardOutputConfiguration={
-#                 "audio": {
-#                     "extraction": {
-#                         "category": {"state": "ENABLED", "types": ["TRANSCRIPT"]}
-#                     },
-#                     "generativeField": {"state": "DISABLED", "types": []},
-#                 },
-#                 "video": {
-#                     "extraction": {
-#                         "category": {"state": "ENABLED", "types": ["TEXT_DETECTION"]},
-#                         "boundingBox": {"state": "ENABLED"},
-#                     },
-#                     "generativeField": {
-#                         "state": "ENABLED",
-#                         "types": ["VIDEO_SUMMARY", "SCENE_SUMMARY"],
-#                     },
-#                 },
-#                 "image": {
-#                     "extraction": {
-#                         "category": {"state": "ENABLED", "types": ["TEXT_DETECTION"]},
-#                         "boundingBox": {"state": "ENABLED"},
-#                     },
-#                     "generativeField": {"state": "ENABLED", "types": ["IMAGE_SUMMARY"]},
-#                 },
-#                 "document": {
-#                     "extraction": {
-#                         "granularity": {"types": ["PAGE", "ELEMENT"]},
-#                         "boundingBox": {"state": "DISABLED"},
-#                     },
-#                     "generativeField": {"state": "DISABLED"},
-#                     "outputFormat": {
-#                         "textFormat": {"types": ["MARKDOWN", "HTML"]},
-#                         "additionalFileFormat": {"state": "DISABLED"},
-#                     },
-#                 },
-#             },
-#             customOutputConfiguration={"blueprints": []},
-#         )
-#     except botocore.exceptions.ClientError as e:
-#         if e.response["Error"]["Code"] == "ConflictException":
-#             print("Using existing Data Automation project")
-#             return get_bda_project_arn(project_name)
-#         else:
-#             raise e
+    try:
+        response = BDA_CLIENT.create_data_automation_project(
+            projectName=project_name,
+            projectDescription=project_description,
+            standardOutputConfiguration={
+                "audio": {
+                    "extraction": {
+                        "category": {"state": "ENABLED", "types": ["TRANSCRIPT"]}
+                    },
+                    "generativeField": {"state": "DISABLED", "types": []},
+                },
+                "video": {
+                    "extraction": {
+                        "category": {"state": "ENABLED", "types": ["TEXT_DETECTION"]},
+                        "boundingBox": {"state": "ENABLED"},
+                    },
+                    "generativeField": {
+                        "state": "ENABLED",
+                        "types": ["VIDEO_SUMMARY", "SCENE_SUMMARY"],
+                    },
+                },
+                "image": {
+                    "extraction": {
+                        "category": {"state": "ENABLED", "types": ["TEXT_DETECTION"]},
+                        "boundingBox": {"state": "ENABLED"},
+                    },
+                    "generativeField": {"state": "ENABLED", "types": ["IMAGE_SUMMARY"]},
+                },
+                "document": {
+                    "extraction": {
+                        "granularity": {"types": ["PAGE", "ELEMENT"]},
+                        "boundingBox": {"state": "DISABLED"},
+                    },
+                    "generativeField": {"state": "DISABLED"},
+                    "outputFormat": {
+                        "textFormat": {"types": ["MARKDOWN", "HTML"]},
+                        "additionalFileFormat": {"state": "DISABLED"},
+                    },
+                },
+            },
+            customOutputConfiguration={"blueprints": []},
+        )
+    except botocore.exceptions.ClientError as e:
+        if e.response["Error"]["Code"] == "ConflictException":
+            print("Using existing Data Automation project")
+            return get_bda_project_arn(project_name)
+        else:
+            raise e
 
-#     project_arn = response["projectArn"]
-#     creation_status = response["status"]
+    project_arn = response["projectArn"]
+    creation_status = response["status"]
 
-#     max_wait_time = 60
-#     while creation_status == "IN_PROGRESS":
-#         creation_status = BDA_CLIENT.get_data_automation_project(
-#             projectArn=project_arn
-#         )["project"]["status"]
+    max_wait_time = 60
+    while creation_status == "IN_PROGRESS":
+        creation_status = BDA_CLIENT.get_data_automation_project(
+            projectArn=project_arn
+        )["project"]["status"]
 
-#         print(f"Project creation status: {creation_status}")
-#         time.sleep(5)
-#         max_wait_time -= 5
+        print(f"Project creation status: {creation_status}")
+        time.sleep(5)
+        max_wait_time -= 5
 
-#         if max_wait_time <= 0:
-#             raise TimeoutError("Project creation took too long")
+        if max_wait_time <= 0:
+            raise TimeoutError("Project creation took too long")
 
-#     if creation_status == "COMPLETED":
-#         return project_arn
-#     else:
-#         raise Exception(f"Project creation failed with status: {creation_status}")
+    if creation_status == "COMPLETED":
+        return project_arn
+    else:
+        raise Exception(f"Project creation failed with status: {creation_status}")
 
 
 def upload_file_to_s3(file_path: Union[str, Path], bucket: str, prefix: str):
@@ -120,14 +120,10 @@ def process_bda(
     max_wait_time: int = 120,
 ):
 
-    # data_automation_project_arn = create_bda_project(
-    #     project_name="doc_processing_project",
-    #     project_description="Project for processing documents",
-    # )
-    response = BDA_CLIENT.list_data_automation_projects(
-    maxResults=3,
-    projectStageFilter='LIVE')
-    data_automation_project_arn = [project['projectArn'] for project in response['projects'] if project['projectName'] == 'doc_processing_project'][0]
+    data_automation_project_arn = create_bda_project(
+        project_name="doc_processing_project",
+        project_description="Project for processing documents",
+    )
 
     input_file_s3_uri = upload_file_to_s3(local_file_path, s3_bucket, s3_input_prefix)
     output_s3_uri = f"s3://{s3_bucket}/{s3_output_prefix}"
