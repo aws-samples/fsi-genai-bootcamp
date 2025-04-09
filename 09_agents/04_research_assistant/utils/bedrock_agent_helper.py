@@ -492,7 +492,7 @@ class AgentsForAmazonBedrock:
             env_variables["Variables"]["dynamodb_pk"] = dynamo_args[1]
             env_variables["Variables"]["dynamodb_sk"] = dynamo_args[2]
         else:
-            lambda_role = self._create_lambda_iam_role(agent_name, sub_agent_arns)
+            lambda_role = self._create_lambda_iam_role(agent_name, sub_agent_arns,additional_function_iam_policy)
 
         # Create Lambda Function
         _lambda_function = self._lambda_client.create_function(
@@ -1861,14 +1861,20 @@ class AgentsForAmazonBedrock:
                             )
 
                             if "metadata" in _orch["modelInvocationOutput"]:
-                                _llm_usage = _orch["modelInvocationOutput"]["metadata"][
-                                    "usage"
-                                ]
+                                
+                                _llm_usage = _orch["modelInvocationOutput"]["metadata"]["usage"]
                                 _in_tokens = _llm_usage["inputTokens"]
                                 _total_in_tokens += _in_tokens
-
                                 _out_tokens = _llm_usage["outputTokens"]
                                 _total_out_tokens += _out_tokens
+                                
+                                '''
+                                _llm_usage = _orch.get("modelInvocationOutput", {}).get("metadata", {}).get("usage", {})
+                                _in_tokens = _llm_usage.get("inputTokens", 0)
+                                _total_in_tokens += _in_tokens
+                                _out_tokens = _llm_usage.get("outputTokens", 0)
+                                _total_out_tokens += _out_tokens
+                                '''
 
                                 print(
                                     colored(
@@ -2157,6 +2163,7 @@ class AgentsForAmazonBedrock:
                             )
 
                         if "modelInvocationOutput" in _route:
+                            '''
                             _llm_usage = _route["modelInvocationOutput"]["metadata"][
                                 "usage"
                             ]
@@ -2164,6 +2171,13 @@ class AgentsForAmazonBedrock:
                             _total_in_tokens += _in_tokens
 
                             _out_tokens = _llm_usage["outputTokens"]
+                            _total_out_tokens += _out_tokens
+                            '''
+                            
+                            _llm_usage = _route.get("modelInvocationOutput", {}).get("metadata", {}).get("usage", {})
+                            _in_tokens = _llm_usage.get("inputTokens", 0)
+                            _total_in_tokens += _in_tokens
+                            _out_tokens = _llm_usage.get("outputTokens", 0)
                             _total_out_tokens += _out_tokens
 
                             _total_llm_calls += 1
@@ -2455,13 +2469,17 @@ class AgentsForAmazonBedrock:
                             )
 
                             if "metadata" in _orch["modelInvocationOutput"]:
-                                _llm_usage = _orch["modelInvocationOutput"]["metadata"][
-                                    "usage"
-                                ]
+                                '''
+                                _llm_usage = _orch["modelInvocationOutput"]["metadata"]["usage"]
                                 _in_tokens = _llm_usage["inputTokens"]
                                 _total_in_tokens += _in_tokens
-
                                 _out_tokens = _llm_usage["outputTokens"]
+                                _total_out_tokens += _out_tokens
+                                '''
+                                _llm_usage = _orch.get("modelInvocationOutput", {}).get("metadata", {}).get("usage", {})
+                                _in_tokens = _llm_usage.get("inputTokens", 0)
+                                _total_in_tokens += _in_tokens
+                                _out_tokens = _llm_usage.get("outputTokens", 0)
                                 _total_out_tokens += _out_tokens
 
                                 print(
@@ -2484,6 +2502,7 @@ class AgentsForAmazonBedrock:
                     elif "preProcessingTrace" in _event["trace"]["trace"]:
                         _pre = _event["trace"]["trace"]["preProcessingTrace"]
                         if "modelInvocationOutput" in _pre:
+                            '''
                             _llm_usage = _pre["modelInvocationOutput"]["metadata"][
                                 "usage"
                             ]
@@ -2491,6 +2510,13 @@ class AgentsForAmazonBedrock:
                             _total_in_tokens += _in_tokens
 
                             _out_tokens = _llm_usage["outputTokens"]
+                            _total_out_tokens += _out_tokens
+                            '''
+
+                            _llm_usage = _pre.get("modelInvocationOutput", {}).get("metadata", {}).get("usage", {})
+                            _in_tokens = _llm_usage.get("inputTokens", 0)
+                            _total_in_tokens += _in_tokens
+                            _out_tokens = _llm_usage.get("outputTokens", 0)
                             _total_out_tokens += _out_tokens
 
                             _total_llm_calls += 1
@@ -2511,6 +2537,7 @@ class AgentsForAmazonBedrock:
                     elif "postProcessingTrace" in _event["trace"]["trace"]:
                         _post = _event["trace"]["trace"]["postProcessingTrace"]
                         if "modelInvocationOutput" in _post:
+                            '''
                             _llm_usage = _post["modelInvocationOutput"]["metadata"][
                                 "usage"
                             ]
@@ -2518,6 +2545,12 @@ class AgentsForAmazonBedrock:
                             _total_in_tokens += _in_tokens
 
                             _out_tokens = _llm_usage["outputTokens"]
+                            _total_out_tokens += _out_tokens
+                             '''
+                            _llm_usage = _post.get("modelInvocationOutput", {}).get("metadata", {}).get("usage", {})
+                            _in_tokens = _llm_usage.get("inputTokens", 0)
+                            _total_in_tokens += _in_tokens
+                            _out_tokens = _llm_usage.get("outputTokens", 0)
                             _total_out_tokens += _out_tokens
 
                             _total_llm_calls += 1
