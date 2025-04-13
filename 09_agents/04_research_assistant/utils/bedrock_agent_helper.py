@@ -530,10 +530,24 @@ class AgentsForAmazonBedrock:
                 )
                 _role_arn = _function_resp["Configuration"]["Role"]
                 _role_name = _role_arn.split("/")[1]
+                '''
                 self._iam_client.detach_role_policy(
                     RoleName=_role_name,
                     PolicyArn="arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
                 )
+                '''
+
+                # List and detach all attached managed policies
+                attached_policies = self._iam_client.list_attached_role_policies(
+                    RoleName=_role_name
+                )['AttachedPolicies']
+            
+                for policy in attached_policies:
+                    self._iam_client.detach_role_policy(
+                        RoleName=_role_name,
+                        PolicyArn=policy['PolicyArn']
+                    )
+                    
                 self._iam_client.delete_role(RoleName=_role_name)
             except:
                 pass
