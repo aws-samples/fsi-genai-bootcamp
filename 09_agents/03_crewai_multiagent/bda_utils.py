@@ -43,16 +43,16 @@ def create_bda_project(project_name: str, project_description: str):
                     },
                     "generativeField": {"state": "DISABLED", "types": []},
                 },
-                "video": {
-                    "extraction": {
-                        "category": {"state": "ENABLED", "types": ["TEXT_DETECTION"]},
-                        "boundingBox": {"state": "ENABLED"},
-                    },
-                    "generativeField": {
-                        "state": "ENABLED",
-                        "types": ["VIDEO_SUMMARY", "SCENE_SUMMARY"],
-                    },
-                },
+                # "video": {
+                #     "extraction": {
+                #         "category": {"state": "ENABLED", "types": ["TEXT_DETECTION"]},
+                #         "boundingBox": {"state": "ENABLED"},
+                #     },
+                #     "generativeField": {
+                #         "state": "ENABLED",
+                #         "types": ["VIDEO_SUMMARY", "SCENE_SUMMARY"],
+                #     },
+                # },
                 "image": {
                     "extraction": {
                         "category": {"state": "ENABLED", "types": ["TEXT_DETECTION"]},
