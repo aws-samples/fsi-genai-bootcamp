@@ -1,25 +1,7 @@
-Category,Q4_2023,Q4_2024,FY_2023,FY_2024,Summary
-Cash and cash equivalents (beginning),50081,78677,54253,73890,Cash
-Net income,10624,20004,30425,59248,Net Income
-Depreciation and amortization,13820,15631,48663,52795,Adjustment
-Stock-based compensation,6319,4995,24023,22011,Adjustment
-Non-operating (income)/expense,-339,-486,-748,2012,Adjustment
-Deferred income taxes,-1464,-1608,-5876,-4648,Adjustment
-Inventories,2643,934,1449,-1884,operating assets/liabilities
-Accounts receivable,-7447,-4023,-8348,-3249,operating assets/liabilities
-Other assets,-2802,-4190,-12265,-14483,operating assets/liabilities
-Accounts payable,10888,8726,5473,2972,operating assets/liabilities
-Accrued expenses,6594,4042,-2428,-2904,operating assets/liabilities
-Unearned revenue,3629,1611,4578,4007,operating assets/liabilities
-Property and equipment purchases,-14588,-27834,-52729,-82999,Investing Activities
-Proceeds from property sales,1235,1782,4596,5341,Investing Activities
-Acquisitions and investments,-381,-2535,-5839,-7082,Investing Activities
-Sales of marketable securities,1568,3677,5627,16403,Investing Activities
-Purchases of marketable securities,-435,-12533,-1488,-26005,Investing Activities
-Short-term debt proceeds,734,2554,18129,5142,Financing Activities
-Short-term debt repayments,-6338,-2607,-25677,-5060,Financing Activities
-Long-term debt repayments,-290,-2500,-3676,-9182,Financing Activities
-Finance lease repayments,-779,-333,-4384,-2043,Financing Activities
-Financing obligation repayments,-73,-422,-271,-669,Financing Activities
-Foreign currency effect,691,-1250,403,-1301,Financing Activities
-
+Account,Year,Value
+Net Income,2020,21331
+Net Income,2021,33364
+Net Income,2022,-2722
+Operating Income,2020,22899
+Operating Income,2021,24879
+Operating Income,2022,12248
