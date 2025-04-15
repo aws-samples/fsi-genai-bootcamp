@@ -1,7 +1,7 @@
+boto3>=1.37.34
 fastapi
 langgraph
 langchain
 langchain-aws
 sagemaker
 httpx
-boto3
