@@ -1,0 +1,23 @@
+[project]
+name = "investment-agent"
+version = "0.1.0"
+description = "example investment Bedrock Agent using AWS CDK and Generative AI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aws-lambda-powertools>=3.8.0",
+    "duckduckgo-search>=7.5.4",
+    "pandas-datareader>=0.10.0",
+    "pip>=25.0.1",
+    "pydantic>=2.11.1",
+    "yfinance>=0.2.55",
+]
+
+[dependency-groups]
+dev = [
+    "aws-cdk-lib>=2.185.0",
+    "aws-xray-sdk>=2.14.0",
+    "cdklabs-generative-ai-cdk-constructs>=0.1.298",
+    "constructs>=10.4.2",
+    "pytest >=8.1.1,<9",
+]

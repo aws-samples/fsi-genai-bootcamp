@@ -1,0 +1,16 @@
+{
+    "messageVersion": "1.0",
+    "agent": {
+      "name": "StockAgent",
+      "id": "EXAMPLEAGENTID",
+      "alias": "TSTALIASID",
+      "version": "DRAFT"
+    },
+    "inputText": "What is the current date?",
+    "sessionId": "examplesessionid",
+    "actionGroup": "StockDataActionGroup",
+    "apiPath": "/get_current_date",
+    "httpMethod": "GET",
+    "parameters": [],
+    "requestBody": null
+  }

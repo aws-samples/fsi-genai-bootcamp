@@ -6,6 +6,12 @@ import os
 from pathlib import Path
 from opensearchpy import RequestsHttpConnection, AWSV4SignerAuth
 
+
+from langchain_core.callbacks import CallbackManagerForRetrieverRun
+from langchain_core.documents import Document
+from typing import Any, Iterable, List
+from langchain_core.retrievers import BaseRetriever
+
 USER_IDENTITY = boto3.client("sts").get_caller_identity()["Arn"]
 USER_ACCOUNT = boto3.client("sts").get_caller_identity()["Account"]
 
@@ -241,3 +247,63 @@ def get_aws_auth():
     auth = AWSV4SignerAuth(credentials, REGION, service)
 
     return auth
+
+
+def get_host(collection_name: str):
+    sess = boto3.session.Session()
+    region = sess.region_name
+    aoss_client = sess.client("opensearchserverless")
+    collections = aoss_client.list_collections(
+        collectionFilters={"name": collection_name, "status": "ACTIVE"}
+    )
+
+    collection_details = collections["collectionSummaries"][0]
+    collection_endpoint = f'{collection_details["id"]}.{region}.aoss.amazonaws.com'
+
+    return collection_endpoint
+
+
+class OpenSearchBM25Retriever(BaseRetriever):
+    client: Any
+    index_name: str
+    k: int = 10
+
+    def _get_relevant_documents(
+        self,
+        query_text: str,
+        k: int = None,
+        pre_filters: List[dict] = [],
+        *,
+        run_manager: CallbackManagerForRetrieverRun,
+    ) -> List[Document]:
+        """
+        Get relevant documents from the OpenSearch index using BM25.
+        """
+        if not k:
+            k = self.k
+
+        # Pre-filtering
+        if pre_filters:
+            query = {
+                "query": {
+                    "bool": {
+                        "must": [{"match": {"text": query_text}}],
+                        "filter": pre_filters,
+                    }
+                }
+            }
+
+        else:
+            query = {"query": {"match": {"text": query_text}}}
+
+        response = self.client.search(index=self.index_name, body=query, size=k)
+
+        hits = response["hits"]["hits"]
+        docs = []
+        for hit in hits:
+            doc = Document(
+                page_content=hit["_source"]["text"], metadata=hit["_source"]["metadata"]
+            )
+            docs.append(doc)
+
+        return docs
