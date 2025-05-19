@@ -1,0 +1,42 @@
+{
+    "messageVersion": "1.0",
+    "agent": {
+        "name": "StockAgent",
+        "id": "EXAMPLEAGENTID",
+        "alias": "TSTALIASID",
+        "version": "DRAFT"
+    },
+    "inputText": "Get the daily closing price for MSFT from 2024-01-01 to 2024-04-14",
+    "sessionId": "examplesessionid",
+    "actionGroup": "StockDataActionGroup",
+    "apiPath": "/get_ticker_data",
+    "httpMethod": "GET",
+    "parameters": [
+        {
+            "name": "ticker",
+            "type": "string",
+            "value": "MSFT"
+        },
+        {
+            "name": "start_date",
+            "type": "string",
+            "value": "2024-01-01"
+        },
+        {
+            "name": "end_date",
+            "type": "string",
+            "value": "2024-04-14"
+        },
+        {
+            "name": "metric",
+            "type": "string",
+            "value": "Close"
+        },
+        {
+            "name": "sampling",
+            "type": "string",
+            "value": "daily"
+        }
+    ],
+    "requestBody": null
+}
