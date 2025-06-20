@@ -107,7 +107,7 @@ def create_kb(collection_arn, collection_endpoint, index_name, kb_name, kb_descr
             TEXT_FIELD_NAME,
             METADATA_FIELD_NAME,
         )
-        time.sleep(5)
+        time.sleep(10)
 
     existing_kb = BEDROCK_AGENT_CLIENT.list_knowledge_bases()["knowledgeBaseSummaries"]
 
