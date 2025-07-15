@@ -93,7 +93,16 @@ def create_index(
     }
 
     oss_client.indices.create(index=index_name, body=index_settings)
+    
+    index_exists = False
+    max_wait = 60
+    while not index_exists and max_wait > 0:
+        time.sleep(2)
+        index_exists = oss_client.indices.exists(index=index_name)
+        max_wait -= 2
 
+    if not index_exists:
+        print(f"Issue creating index {index_name}. Please check the OpenSearch Serverless console.")
 
 def create_kb(collection_arn, collection_endpoint, index_name, kb_name, kb_description):
 
@@ -107,7 +116,7 @@ def create_kb(collection_arn, collection_endpoint, index_name, kb_name, kb_descr
             TEXT_FIELD_NAME,
             METADATA_FIELD_NAME,
         )
-        time.sleep(10)
+        # time.sleep(10)
 
     existing_kb = BEDROCK_AGENT_CLIENT.list_knowledge_bases()["knowledgeBaseSummaries"]
 
