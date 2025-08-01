@@ -1,72 +1,112 @@
-import pkg_resources
-import importlib
-import pkg_resources
+import importlib.metadata  
 import subprocess
 import os
 import sys
+from pathlib import Path
 
 from packaging.requirements import Requirement
 from packaging.version import parse as parse_version
 
-from pathlib import Path
 
-
+# --- Constants ---
 MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 BASE_ENV_PATH = os.path.join(MODULE_DIR, "environments/base.txt")
 
-BASE_ENV = Path(BASE_ENV_PATH).open().read().strip().split("\n")
+# It's good practice to handle potential FileNotFoundError here
+try:
+    BASE_ENV = Path(BASE_ENV_PATH).open().read().strip().split("\n")
+except FileNotFoundError:
+    print(f"Warning: Base environment file not found at {BASE_ENV_PATH}")
+    BASE_ENV = []
 
 
 def validate_libraries(libraries):
-    importlib.reload(pkg_resources)
-    installed_packages = pkg_resources.working_set
-    installed_packages_dict = {i.key: i.version for i in installed_packages}
+    """
+    Validates if the specified libraries are installed and meet version requirements.
+
+    This function uses `importlib.metadata` to get the list of installed packages,
+    which is the modern replacement for the deprecated `pkg_resources`.
+
+    Args:
+        libraries (list[str]): A list of library requirement strings (e.g., "pandas>=1.0").
+
+    Returns:
+        tuple[list[str], list[str]]: A tuple containing two lists:
+                                     - The first list has installed and compatible packages.
+                                     - The second list has missing or incompatible packages.
+    """
+    # Create a dictionary of installed packages, mapping the normalized name to its version.
+    # The name is normalized to lowercase to ensure case-insensitive matching.
+    installed_packages_dict = {
+        dist.metadata["Name"].lower(): dist.version
+        for dist in importlib.metadata.distributions()
+    }
 
     installed_packages_list = []
     not_installed_packages_list = []
 
-    for lib in libraries:
-        if "_" in lib:
-            lib = lib.replace("_", "-")
-        lib = lib.lower()
-        req = Requirement(lib)
-        installed_version = installed_packages_dict.get(req.name)
+    for lib_string in libraries:
+        if not lib_string or lib_string.startswith('#'):
+            continue  # Skip empty lines or comments
 
-        if installed_version is None:
-            not_installed_packages_list.append(lib)
+        # The Requirement object normalizes the package name (e.g., 'My_Package' -> 'my-package').
+        req = Requirement(lib_string)
+        
+        # Look up the installed version using the normalized name.
+        installed_version_str = installed_packages_dict.get(req.name.lower())
+
+        if installed_version_str is None:
+            # The package is not found in the environment.
+            not_installed_packages_list.append(lib_string)
         else:
-            installed_version = parse_version(installed_version)
-            if req.specifier.contains(installed_version):
-                installed_packages_list.append(lib)
+            # The package is installed; now check if the version is compatible.
+            installed_version = parse_version(installed_version_str)
+            # The `contains` method checks if the installed version satisfies the specifier.
+            # We add `prereleases=True` to correctly handle pre-release versions.
+            if req.specifier.contains(installed_version, prereleases=True):
+                installed_packages_list.append(lib_string)
             else:
-                not_installed_packages_list.append(lib)
+                # The installed version does not meet the version requirement.
+                not_installed_packages_list.append(lib_string)
 
     return installed_packages_list, not_installed_packages_list
 
 
 def install_libraries(libraries):
+    """
+    Installs a list of libraries using pip.
 
+    Args:
+        libraries (list[str]): A list of libraries to install.
+    """
     for library in libraries:
-
+        print(f"Installing {library}...")
         try:
+            # Using -Uqq for upgrade, quiet, and quieter installation.
             subprocess.check_call(
                 [sys.executable, "-m", "pip", "install", "-Uqq", library],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.STDOUT,
             )
-            print(f"{library} has been installed successfully.")
+            print(f"Successfully installed {library}.")
         except subprocess.CalledProcessError as e:
-            return f"Failed to install {library}. Error: {str(e)}"
+            # Provide a more informative error message.
+            print(f"Failed to install {library}. Pip process exited with error: {e}")
 
 
 def validate_environment(requirements_file="requirements.txt"):
-
-    print("Validating base environment")
+    """
+    Validates the Python environment against a base set of libraries and a requirements file.
+    """
+    print("Validating base environment...")
     base_installed, base_not_installed = validate_libraries(BASE_ENV)
-    install_libraries(base_not_installed)
-    print("Base environment validated successfully")
+    if base_not_installed:
+        print("Installing missing base libraries...")
+        install_libraries(base_not_installed)
+    print("Base environment validated successfully.")
 
+    # These imports are placed here because they are only used in this function
+    # and might not be installed until the base environment is validated.
     from rich import print as rprint
     from rich.console import Console
 
@@ -78,29 +118,29 @@ def validate_environment(requirements_file="requirements.txt"):
         requirements = Path(requirements_file).open().read().strip().split("\n")
     except FileNotFoundError:
         rprint(
-            "[#ef233c]requirements.txt file not found. Please make sure the file exists in the current directory.[/#ef233c]"
+            f"[#ef233c]Error: '{requirements_file}' not found. Please ensure the file exists.[/#ef233c]"
         )
         return
 
     installed, not_installed = validate_libraries(requirements)
 
+    # Build and print the environment status report
     installed_msg = (
         "[#e85d04 underline bold]ENVIRONMENT STATUS[/#e85d04 underline bold]\n"
     )
-
     for pkg in installed:
-        installed_msg += f":white_check_mark: [green] {pkg} is installed[/green]\n"
-
+        installed_msg += f":white_check_mark: [green]{pkg} is installed[/green]\n"
     for pkg in not_installed:
-        installed_msg += f":x: [#ef233c]{pkg} is not installed[/#ef233c]\n"
+        installed_msg += f":x: [#ef233c]{pkg} is not installed or has wrong version[/#ef233c]\n"
     rprint(installed_msg)
 
-    if len(not_installed) > 0:
-        rprint("[cyan bold]Installing missing libraries[/cyan bold]")
+    if not_installed:
+        rprint("[cyan bold]Installing/updating missing libraries...[/cyan bold]")
         install_libraries(not_installed)
+        rprint("[#a7c957]Installation complete![/#a7c957]")
 
     rprint(
-        "[#a7c957]All required libraries are installed.:tada:\nYou may proceed with the lab! :rocket:[/#a7c957]"
+        "[#a7c957]All required libraries are installed. :tada:\nYou may proceed with the lab! :rocket:[/#a7c957]"
     )
 
 
@@ -121,26 +161,33 @@ def _model_access(model_id):
 
 
 def validate_model_access(required_models):
+    """
+    Validates access to a list of required AWS Bedrock models.
+    """
     from rich import print as rprint
 
     validation_msg = (
         "[#e85d04 underline bold]MODEL ACCESS STATUS[/#e85d04 underline bold]\n"
     )
+    all_models_accessible = True
     for model in required_models:
         status = _model_access(model)
         if status:
             validation_msg += (
-                f":white_check_mark: [green] {model} is accessible[/green]\n"
+                f":white_check_mark: [green]{model} is accessible[/green]\n"
             )
         else:
             validation_msg += f":x: [#ef233c]{model} is not accessible[/#ef233c]\n"
+            all_models_accessible = False
+            
     rprint(validation_msg)
 
-    if all([_model_access(model) for model in required_models]):
+    if all_models_accessible:
         rprint(
-            "[#a7c957]All required models are accessible.:tada:\nYou may proceed with the lab! :rocket:[/#a7c957]"
+            "[#a7c957]All required models are accessible. :tada:\nYou may proceed with the lab! :rocket:[/#a7c957]"
         )
     else:
         rprint(
-            "[#ef233c]Please enable access to the model in the AWS Console as explained in the workshop instructions[/#ef233c]"
+            "[#ef233c]One or more models are not accessible. Please enable access in the AWS Console as explained in the workshop instructions.[/#ef233c]"
         )
+
