@@ -1,0 +1,101 @@
+client_id,first_name,last_name,email,phone_number,date_of_birth,risk_profile,investment_objective,created_at
+a4ee56ab-c7c4-4156-97f6-a0ff6ff35b3d,Tanya,Jenkins,mwise@example.net,(722)392-2050,1945-03-14,Conservative,Speculation,2023-01-27 21:31:57
+f2cc681e-5180-43fa-864e-fd899a8a8387,John,Williams,melissa92@example.org,330-331-4273x2329,1958-03-19,Conservative,Growth,2020-09-04 20:16:48
+67f5eecd-0c13-46ff-9149-202128fd3348,Timothy,Bryan,danielcampbell@example.org,+1-964-614-1365,1982-10-13,Moderate,Speculation,2023-06-26 13:15:08
+170b134a-1895-4160-965a-feceec9ff8c0,Leah,Garza,dmaynard@example.net,760-814-7033,1991-09-27,Moderate,Speculation,2020-07-21 07:10:15
+1a269d63-05d7-416f-b0d1-54f7971814c7,Sandra,Moran,veronica70@example.com,956.903.4010x305,1976-12-05,Conservative,Capital Preservation,2021-01-22 04:44:17
+53be10cb-cc3d-4e92-afd5-bfe5b3779b23,Kristin,Sanchez,whitekari@example.com,001-965-451-9010,1969-07-21,Aggressive,Capital Preservation,2024-07-28 00:50:26
+7fe4d010-52df-4d78-b0ef-de18c368cdd8,Alyssa,Garcia,brianevans@example.com,(397)320-9584,1992-01-26,Aggressive,Capital Preservation,2024-04-05 10:15:21
+e08648d5-1949-4f6e-9ad8-ef3a8d37657f,Sarah,Williams,anthony76@example.org,772-347-2226,1959-12-09,Conservative,Capital Preservation,2022-09-07 10:35:31
+3646993a-2915-4253-96b3-9478e3cc93c6,Michael,Tran,ilopez@example.org,794-345-6226x81510,1957-12-14,Moderate,Capital Preservation,2021-09-20 11:00:54
+c1802793-bb54-42c3-8953-78ff73f02c58,Misty,Kidd,michaela18@example.com,4339033575,1960-04-09,Conservative,Growth,2020-08-28 03:48:49
+003efa72-c88e-4ba7-9d05-27e2434cad0c,Jenny,Rodriguez,pholt@example.com,+1-303-363-7452x34265,1991-10-19,Conservative,Growth,2022-08-31 12:05:27
+ff23c36d-7ba8-4f80-9f17-bff61347ac23,Kevin,Freeman,robyn94@example.net,001-377-961-2532x1835,1991-03-22,Aggressive,Speculation,2021-11-12 11:30:26
+4f641dcc-a3ab-4ef2-811c-ec47fb7e3069,Dylan,Spencer,michelle09@example.net,(999)484-6475,1948-04-25,Moderate,Income,2023-10-02 12:09:45
+d1c3bb17-fbdf-4f99-8aae-ba65d2bf4ec3,Cynthia,Gonzalez,burtontoni@example.org,001-584-676-8041x64641,1953-06-05,Moderate,Income,2022-05-18 22:53:37
+6f3d1793-a041-4575-9468-fd14d776a664,Christopher,Nelson,ehunt@example.org,(378)302-8822,1953-01-23,Moderate,Speculation,2022-11-02 07:14:58
+e74860e8-dcd6-43a0-967d-5f90449d001b,Paul,Johnson,jmiller@example.org,438-236-9857x15731,2000-03-19,Aggressive,Capital Preservation,2020-06-21 04:44:17
+46592d43-e72b-4ac1-8b6d-206bba3fa012,Sonia,Green,zpittman@example.net,+1-870-983-7831,1976-06-13,Conservative,Capital Preservation,2023-04-08 06:29:47
+4293d30d-5f2e-43d6-a230-96c2229111c5,Christine,Barnes,alexanderjackson@example.net,901-513-1884,1952-04-16,Conservative,Capital Preservation,2022-12-14 19:45:10
+786c7886-a7c8-4ecc-aaef-74b5bfb7136b,Phillip,Morgan,sarah21@example.com,259-763-0765,1986-08-15,Conservative,Speculation,2022-10-14 03:32:02
+3d1dcd27-4b3a-48ca-96ab-a1ac1d119fdc,Marcus,Douglas,christopherhammond@example.org,(440)635-7891,1951-12-12,Moderate,Capital Preservation,2022-03-01 00:34:18
+c503898a-bb05-4d83-86fc-5a43616021b7,Scott,Cantu,parrishzachary@example.net,335.980.8063x59664,1960-12-06,Aggressive,Speculation,2021-02-25 13:39:27
+057d54ce-9423-45d5-830d-382b80d59742,Raymond,Randolph,cooktyler@example.org,(515)279-3472,1983-07-12,Conservative,Growth,2023-05-08 03:32:44
+c04e6ba4-b4e7-492d-9ae2-17997e33c502,Vanessa,Ware,rbowen@example.net,510.311.7816,1951-01-13,Moderate,Income,2020-09-30 06:11:21
+879743c9-1215-4a06-bd31-01d4de40b325,Michelle,Bruce,josephgraves@example.com,001-578-327-6258x1698,1950-10-18,Moderate,Growth,2022-10-04 03:32:32
+a957833e-5d07-48a0-9498-fcd828ec6824,Manuel,Preston,jenniferanthony@example.org,888-831-8595x413,1970-03-19,Aggressive,Income,2022-09-18 07:12:52
+fa5d20f3-177f-4460-8a8d-f65da1cfde77,Jordan,Hartman,ffowler@example.org,274-924-0180,1950-03-27,Conservative,Capital Preservation,2021-05-30 06:43:46
+244b2d17-e027-41a9-997e-c86d2f478b63,Rebecca,Dudley,fjohnson@example.net,(694)277-6619x5768,1952-11-02,Moderate,Speculation,2021-08-08 07:32:49
+60b48204-3c92-4df9-87a9-8d707fdc2a3a,Joseph,Ellis,staceynielsen@example.net,(697)924-9740x0486,1952-10-03,Aggressive,Growth,2022-07-06 03:14:21
+a0dfbc50-100f-48ec-8f74-0722a2b02d7d,Nicole,Jacobson,katherine42@example.net,001-407-985-6963x825,1973-07-17,Conservative,Capital Preservation,2022-01-29 21:12:06
+b01eb628-168d-433b-a77b-07c3457b8daf,Tanya,White,vmorales@example.net,3145335770,1998-01-03,Moderate,Speculation,2022-12-05 07:04:10
+f953a9e9-22ef-49e6-8b73-382480208a87,Shannon,Garrison,angelicafrancis@example.com,779.386.0780x90823,1949-07-30,Moderate,Income,2023-11-16 21:05:22
+80abbb4a-f06a-49cb-bf35-b5ae7c8b1485,Jennifer,Marks,brian97@example.org,001-434-989-3204,1980-06-12,Moderate,Income,2025-04-02 17:16:03
+4f0ce0c9-09b8-43bc-b92e-7e4d0c28547f,Jeremy,Ross,xcoleman@example.org,001-489-820-8479,1975-06-21,Conservative,Capital Preservation,2020-12-14 05:03:20
+d073ae6a-03a8-46e6-bfb0-5980b4ca61c6,Terri,Griffith,burtonsamuel@example.net,401-365-5539,1956-05-18,Conservative,Capital Preservation,2024-10-06 20:31:13
+e8082052-7bad-4004-a5db-cb6e8bff7129,Lydia,Brown,zwilliamson@example.net,609-518-4008x582,1978-03-11,Aggressive,Capital Preservation,2021-06-22 09:33:52
+b2e51745-f9f0-48ac-8c06-b3be49a19e31,Michelle,Brown,kimberlywilliams@example.org,(874)411-1560x07882,1951-05-30,Moderate,Growth,2021-12-21 23:20:56
+b859b320-5d6d-4dfd-af86-0d9cc8cc8fab,Christine,Molina,ortizjason@example.net,+1-732-294-3326,2000-06-04,Aggressive,Capital Preservation,2023-05-29 12:57:07
+37c1600c-3caa-4f56-8485-fbe3f0c63f59,Brian,Pruitt,kleinlauren@example.com,+1-463-303-4494x7274,1976-01-30,Moderate,Growth,2024-10-14 23:23:19
+1961c9d2-1c12-413b-9a04-09dc38cce7ca,Keith,Perez,klee@example.net,001-857-383-9586x578,1992-05-16,Moderate,Speculation,2024-08-26 13:33:08
+09f96af1-3af4-442d-9744-9ee7efb17641,Mark,Steele,jade06@example.net,722-684-6740x547,1978-03-28,Aggressive,Income,2024-07-25 09:33:01
+9f6ace8b-f460-4202-b4cd-c29baf4d85c5,Olivia,Anderson,ryanbrooks@example.org,488.965.1582x99948,1981-04-11,Moderate,Speculation,2022-09-26 08:39:48
+9ed630e0-0185-4b1c-ae8a-e0255f0358ec,Todd,Kidd,cookkeith@example.org,+1-440-886-6128,1993-09-23,Conservative,Income,2021-08-07 11:04:47
+8ca6407b-e6b7-45d0-ace0-72401131fecc,Tanya,Russell,david02@example.com,+1-828-241-4075x2228,1997-04-02,Aggressive,Speculation,2020-06-22 08:40:34
+818655a4-34b6-4980-82fe-5b18cd5fe78f,Darren,Smith,seanavila@example.com,9233762217,1982-09-22,Moderate,Growth,2024-03-28 07:37:52
+764c7f2d-c9ae-4e5b-8fe1-800e8953ae28,Kelly,Bartlett,bryansmith@example.net,(690)368-2582x913,1947-06-23,Moderate,Capital Preservation,2022-03-30 02:07:53
+8fe76fdc-07bb-4f05-92ec-0da8549b5c1f,Carlos,Webb,katie73@example.com,(972)400-1235,1953-02-18,Moderate,Speculation,2024-01-23 15:52:49
+34b858aa-2df2-4d63-bf92-0f763fcd76c2,Jennifer,Nguyen,sullivanangelica@example.com,(827)977-2747x664,1960-02-06,Aggressive,Speculation,2022-12-28 15:12:40
+21705312-51e1-4662-ab75-9ee1ac940f14,Brandon,Perez,smartinez@example.org,001-473-933-7715x93771,1958-03-14,Aggressive,Growth,2023-01-14 05:40:37
+d4d3cb46-9ba4-48a0-a79c-66e08a51e545,Mackenzie,Byrd,cory76@example.org,966-759-5322x90587,1991-06-01,Conservative,Speculation,2021-11-15 10:46:47
+f59a262f-c16f-472e-b3f3-f3d6a98a0e1c,Rebecca,Marshall,katherinemayo@example.com,+1-757-647-7529x879,1964-04-07,Aggressive,Speculation,2021-06-18 22:42:40
+9b1d1d47-0c6c-4d8e-8338-ad64c1647917,Andrew,Rodriguez,thompsoncourtney@example.com,+1-971-709-6703x6900,1962-10-31,Conservative,Growth,2021-08-04 22:43:42
+4568b01e-def8-4439-9831-1a0f66f6b51c,Andrew,Thomas,ffernandez@example.org,001-817-805-9379x34949,1945-05-10,Conservative,Growth,2023-09-23 10:48:30
+6645504a-4acd-402b-b10f-547239d39bf6,Patricia,Sullivan,jenniferherrera@example.net,894-652-6863x182,1957-10-11,Aggressive,Income,2021-01-14 15:55:43
+40c46b82-1013-4cbf-9fdf-ed9ce46de4a8,Stephanie,Williams,martinromero@example.com,965.747.1973,1948-02-04,Moderate,Growth,2021-05-13 15:41:39
+4ae22647-0979-4a13-ae4e-7720ebbdd193,Jeremiah,Bell,george55@example.com,001-685-277-0861x9079,1947-12-01,Conservative,Income,2021-06-30 13:11:19
+49dcb615-f0db-46f8-85c4-a9d2f0d337e2,Veronica,Paul,arthurwheeler@example.com,3077484271,1982-09-18,Moderate,Capital Preservation,2020-08-28 21:12:01
+3d06454c-17b1-4f0e-8c81-54e6c877d71f,Joseph,Jenkins,ifrank@example.com,001-648-567-1233,1969-02-05,Aggressive,Speculation,2024-08-06 18:46:01
+4c6b2ed4-42f4-4cc5-bdcc-683da587a37e,Wendy,Obrien,briananderson@example.net,001-782-539-5594x3793,1963-01-31,Conservative,Capital Preservation,2023-10-23 09:46:28
+f27af7f8-1f56-45ba-97ee-41747384aeb9,Natasha,Nguyen,tina73@example.com,714-495-4751x2022,1969-12-06,Aggressive,Speculation,2021-03-21 14:38:11
+09514946-cd79-47f5-833d-41158b1cc556,Michael,Moore,donna44@example.net,498.723.4610x938,1945-08-05,Moderate,Capital Preservation,2021-11-02 02:09:13
+1d112701-737a-4077-a5aa-934577b1bbe1,David,Weber,lmontes@example.net,510-440-4713x57938,1961-04-15,Aggressive,Speculation,2024-05-24 14:02:50
+0641fff4-de77-49dd-8de5-4bacc5daf20f,Kristen,Burton,amyhansen@example.org,(928)256-3943x25171,1987-11-14,Moderate,Speculation,2021-09-12 19:19:13
+07227ef5-ac85-4afc-9ec8-23f15e4deb7b,Evan,Robertson,stefanie15@example.net,3875855123,1971-12-25,Conservative,Speculation,2022-08-07 05:33:43
+8edaff36-60ee-4f42-8d57-0fc1c0add7d9,Karen,Marshall,teresasavage@example.com,904.767.6927x0158,1946-07-16,Aggressive,Income,2022-04-12 17:29:16
+a4cd1eeb-657b-42aa-acf2-ba6e9c89d686,Linda,Brown,snydertyler@example.net,(551)792-1594,1976-04-19,Conservative,Speculation,2020-08-28 12:12:22
+a5263dd9-49cf-4a25-a0d8-c1d37a8e0404,Jordan,Spears,charles30@example.org,961-546-9973,1986-11-22,Conservative,Income,2023-07-06 02:50:09
+064663ae-cda7-4cfd-bcc2-b9873eb34684,John,Hall,dbryant@example.net,+1-875-586-6119x160,1952-11-14,Conservative,Speculation,2020-12-26 23:45:33
+f7dd45d6-8853-4161-8543-d4e7ef49f479,Joshua,Hughes,patriciaphillips@example.com,+1-652-248-3546x2654,1958-09-09,Conservative,Capital Preservation,2023-04-27 10:31:07
+b84ed154-fce1-4b93-a3b2-5afe5d6d1441,Tyler,Jones,rachel65@example.com,394-476-8046x42285,1972-11-09,Moderate,Capital Preservation,2025-01-29 03:21:55
+20adb57d-9918-4fee-aec3-25d5175cbbda,Andrew,Anderson,connorbradley@example.net,+1-844-834-3425,1995-06-22,Aggressive,Income,2024-07-04 10:38:39
+fb630a58-27a0-45ad-b68d-23b3bcaa5030,Michelle,Taylor,wallerangela@example.org,321-788-7643x5846,1947-07-25,Aggressive,Capital Preservation,2023-05-30 06:04:50
+e4a7284a-73ad-44a4-bc76-b85f0a598382,David,Riddle,meredith26@example.com,4703149177,1989-09-19,Aggressive,Capital Preservation,2020-11-14 18:17:01
+608199ff-4968-42a2-a634-c338f443dde1,Zachary,Hines,stacey84@example.com,604-855-7823x656,1975-07-13,Aggressive,Growth,2022-08-07 08:30:53
+d4b18905-b55a-4dd1-82e8-8f1e68bd9748,Eddie,Morris,dana38@example.net,9955132320,1980-03-19,Conservative,Income,2021-02-28 12:57:53
+18cb0129-cecf-4202-ac3a-fff98a8fa7f7,Kevin,Davis,reedandre@example.net,8608958330,1973-04-01,Aggressive,Speculation,2025-01-23 20:44:56
+aeeb9df7-feab-4c6f-bdbb-6e0feed88649,Dana,Mckenzie,martharichards@example.com,935-846-5618,1998-08-12,Conservative,Speculation,2024-03-30 13:09:03
+b7992060-36dc-463e-8062-ac82f4536315,Kelsey,Beard,dwiggins@example.org,318-674-9571x3281,1980-06-18,Moderate,Capital Preservation,2022-05-23 04:53:54
+2e03cc72-fd0d-495c-9cc2-0dc93e7b3feb,Karen,Smith,kylewalters@example.net,943.888.8840x4273,1980-12-08,Conservative,Income,2022-08-30 15:25:01
+52867505-7f3a-4584-bdfe-293f333845a0,Jeremy,Gonzalez,wsantiago@example.com,7705323040,1954-09-04,Moderate,Speculation,2024-08-11 11:41:25
+78471d6c-7f21-4fcd-8d75-150db6989a28,Rebecca,Brown,anthonydaniels@example.com,(337)878-7022x0523,1951-09-24,Conservative,Income,2025-05-21 04:24:57
+6ef9372a-0d59-4c08-bf66-2b45bba6d020,Natalie,Clark,amanda07@example.org,380.503.0421x91417,1957-06-13,Conservative,Income,2022-04-19 01:08:02
+17ebb1ef-8b19-458f-ab2d-e502a0c87d9f,Jacob,Smith,julie06@example.com,001-360-549-0880,1995-09-26,Moderate,Capital Preservation,2023-02-12 08:43:23
+b3a1a6b3-baf4-49b3-aaaa-f03ffe7187f9,Matthew,Larson,tony74@example.net,(909)985-2073,1976-05-25,Conservative,Speculation,2024-10-24 09:21:01
+2d6f0867-5f60-4897-8838-49e378f136e7,Richard,Ruiz,cookwilliam@example.com,+1-271-389-7428x96882,1996-12-01,Conservative,Speculation,2022-01-18 22:09:29
+a3c9ca2d-dbbe-4c7e-b344-971080f7fb04,Kelly,Brown,nguyendonald@example.net,806.555.5584x73958,1984-03-16,Aggressive,Income,2022-02-04 03:36:00
+91702aab-09c4-4b31-aac3-eb9d04791bdd,Valerie,Colon,josephdunn@example.org,(934)438-7610x20113,1969-03-28,Moderate,Speculation,2024-08-20 17:23:41
+a633cc63-4381-448d-8da1-e64c1463b5c3,Melissa,Newman,ycabrera@example.net,542.289.4354x883,1991-03-15,Aggressive,Capital Preservation,2021-07-25 14:20:18
+8f66810a-7aa7-4548-86d3-3422f3548ec5,Michael,Mcmillan,bowendaniel@example.org,216.955.8444x52687,1982-06-06,Moderate,Speculation,2021-08-03 08:45:18
+0096c404-35b0-407b-a87f-74a140cf5f6e,Mark,Chan,natasha34@example.net,001-894-482-4318,1995-09-16,Conservative,Growth,2021-02-22 20:12:19
+f0dfe5ae-b965-4563-8d32-122166f4ce66,Eugene,Martinez,caitlin91@example.net,(572)636-1909x00410,1995-02-08,Conservative,Speculation,2024-10-16 16:46:02
+aa0d0ece-9009-4415-9389-bd7738ee3c3d,Sue,Jones,whoffman@example.net,001-439-305-2752x31152,1951-02-26,Aggressive,Speculation,2024-05-05 20:24:55
+943fd6f5-28d8-45f8-96b7-898819c1092a,Christopher,Garcia,kennethchoi@example.net,972.492.6267,1951-07-10,Aggressive,Income,2020-12-29 17:10:11
+edb5762a-964a-479e-987f-2bfefb764476,Lucas,Marquez,darrenmontgomery@example.net,205-499-6472,1957-11-04,Conservative,Growth,2024-06-28 11:22:08
+ee43ff3d-f444-427e-90a3-35bc69d6999b,Richard,Vasquez,thompsonrobert@example.net,(710)576-9198x113,1989-02-19,Aggressive,Growth,2021-02-03 12:57:12
+2b24950b-2122-41bb-86b4-35e2ca7c066e,Samuel,Marshall,rebeccacobb@example.com,364.804.2722,1955-10-20,Aggressive,Capital Preservation,2023-09-09 22:08:41
+14971a9f-a24e-4c21-ab1e-cc69059b5534,Jonathan,Madden,linda34@example.org,733.747.3730,1955-11-18,Conservative,Speculation,2023-08-01 13:35:39
+a6658890-44ed-4ec6-8cef-1cda424f51c9,Amanda,Nguyen,scottthomas@example.org,(473)706-4044,1948-02-08,Moderate,Speculation,2024-08-06 10:01:11
+b33ea279-9ffd-4cdd-856d-68730740fa04,Justin,Flores,gatesscott@example.net,001-938-303-6172x531,1996-01-31,Moderate,Growth,2022-12-07 18:27:33
+19601e8d-4b55-4be3-8743-adfcb5250aff,Shari,Smith,portiz@example.org,438.776.7485,1998-04-17,Aggressive,Income,2023-02-24 14:50:43
+3e773aa8-4041-4651-8a15-f949b92ce5d7,Michelle,Page,wattswilliam@example.com,571-448-7209x6192,1975-03-21,Moderate,Capital Preservation,2024-03-08 10:21:19

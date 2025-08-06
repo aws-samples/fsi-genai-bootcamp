@@ -1,0 +1,9 @@
+
+boto3==1.40.3
+botocore==1.40.3
+duckdb==1.3.2
+mcp==1.12.3
+pandas==2.3.1
+pyjwt==2.10.1
+rich
+strands-agents==1.3.0
