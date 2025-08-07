@@ -1,0 +1,316 @@
+account_id,client_id,account_type,account_name,currency,inception_date,status
+acc_a1a8fcd9-c03b-47e0-b938-b3d94d110783,a4ee56ab-c7c4-4156-97f6-a0ff6ff35b3d,Taxable Brokerage,T. Jenkins Taxable Brokerage,USD,2025-04-15,Active
+acc_3cf9840a-c42b-4314-ad0c-5bb178e23117,a4ee56ab-c7c4-4156-97f6-a0ff6ff35b3d,Joint Account,T. Jenkins Joint Account,USD,2023-02-13,Active
+acc_c3275420-2902-4884-92b9-1502cca5e202,f2cc681e-5180-43fa-864e-fd899a8a8387,Retirement (IRA),J. Williams Retirement (IRA),USD,2023-05-15,Active
+acc_61aa9a4b-5c7b-4002-8b26-4769d97a1ac0,f2cc681e-5180-43fa-864e-fd899a8a8387,Joint Account,J. Williams Joint Account,USD,2023-09-28,Active
+acc_b5811cac-9c75-4bbd-bc86-893be2d8caeb,f2cc681e-5180-43fa-864e-fd899a8a8387,Trust,J. Williams Trust,USD,2022-10-07,Active
+acc_2d4258dd-d6fa-4829-bc18-675a49a5611a,f2cc681e-5180-43fa-864e-fd899a8a8387,Taxable Brokerage,J. Williams Taxable Brokerage,USD,2020-09-27,Active
+acc_5318c91f-e0a5-4e8f-a140-52c6602c6013,f2cc681e-5180-43fa-864e-fd899a8a8387,Joint Account,J. Williams Joint Account,USD,2024-12-16,Active
+acc_2dee7b4e-ae7a-433f-a58f-06418a28d7c5,67f5eecd-0c13-46ff-9149-202128fd3348,Taxable Brokerage,T. Bryan Taxable Brokerage,USD,2024-12-23,Active
+acc_e313ef0b-9b23-4f40-8f5a-55a5da03759d,67f5eecd-0c13-46ff-9149-202128fd3348,Trust,T. Bryan Trust,USD,2023-10-16,Active
+acc_d12ed81a-1168-498d-9829-d37747981ed5,67f5eecd-0c13-46ff-9149-202128fd3348,Retirement (IRA),T. Bryan Retirement (IRA),USD,2023-11-03,Active
+acc_0fab6172-f902-4de6-a0d4-afeff49a11e2,170b134a-1895-4160-965a-feceec9ff8c0,Joint Account,L. Garza Joint Account,USD,2022-12-03,Active
+acc_c2a99684-8d52-4c1b-a5cd-e4c90ca68a70,170b134a-1895-4160-965a-feceec9ff8c0,Taxable Brokerage,L. Garza Taxable Brokerage,USD,2022-12-12,Active
+acc_57b55605-fc81-46cd-a340-503b13834344,170b134a-1895-4160-965a-feceec9ff8c0,Trust,L. Garza Trust,USD,2021-09-18,Active
+acc_98484c8f-3547-4fa2-9ffc-5ded9f37273a,1a269d63-05d7-416f-b0d1-54f7971814c7,Retirement (IRA),S. Moran Retirement (IRA),USD,2024-04-30,Active
+acc_d873bada-93ab-460e-90d9-6762dad25b20,1a269d63-05d7-416f-b0d1-54f7971814c7,Taxable Brokerage,S. Moran Taxable Brokerage,USD,2024-11-13,Active
+acc_699b328b-742c-4bf8-bbca-6c0c4b0e18f5,53be10cb-cc3d-4e92-afd5-bfe5b3779b23,Taxable Brokerage,K. Sanchez Taxable Brokerage,USD,2025-04-12,Active
+acc_6131575d-4b4f-4ccf-8a02-ab7aa68c9c7d,53be10cb-cc3d-4e92-afd5-bfe5b3779b23,Trust,K. Sanchez Trust,USD,2024-09-02,Active
+acc_0d8ca9d6-74ee-4222-b18f-204375fad59f,53be10cb-cc3d-4e92-afd5-bfe5b3779b23,Joint Account,K. Sanchez Joint Account,USD,2024-09-08,Active
+acc_13d70c73-fd2c-40d6-adef-2bfaa55caed0,53be10cb-cc3d-4e92-afd5-bfe5b3779b23,Joint Account,K. Sanchez Joint Account,USD,2025-04-30,Active
+acc_30e4ad2b-3db6-4fa1-aae0-6d0f326c9f53,53be10cb-cc3d-4e92-afd5-bfe5b3779b23,Taxable Brokerage,K. Sanchez Taxable Brokerage,USD,2025-05-21,Active
+acc_cbcfc56f-3974-4de5-b910-19685c3f9db1,7fe4d010-52df-4d78-b0ef-de18c368cdd8,Taxable Brokerage,A. Garcia Taxable Brokerage,USD,2025-04-30,Active
+acc_4823a2e9-45dd-425d-a58b-e55c66005ce4,7fe4d010-52df-4d78-b0ef-de18c368cdd8,Taxable Brokerage,A. Garcia Taxable Brokerage,USD,2024-07-07,Active
+acc_a3bf9535-f1f5-42a7-8d92-21eed73a62e5,7fe4d010-52df-4d78-b0ef-de18c368cdd8,Taxable Brokerage,A. Garcia Taxable Brokerage,USD,2025-05-13,Active
+acc_3fac542e-bebf-4015-b79b-23f04feb5183,7fe4d010-52df-4d78-b0ef-de18c368cdd8,Retirement (IRA),A. Garcia Retirement (IRA),USD,2024-09-08,Active
+acc_78f6b19f-107f-4417-a78a-ae3e93dc10a1,e08648d5-1949-4f6e-9ad8-ef3a8d37657f,Joint Account,S. Williams Joint Account,USD,2024-08-27,Active
+acc_a4e3bd73-c826-4af8-9830-5a033ebf7c76,e08648d5-1949-4f6e-9ad8-ef3a8d37657f,Taxable Brokerage,S. Williams Taxable Brokerage,USD,2023-07-05,Active
+acc_05ba735c-f6dc-4609-8445-1193aadaed89,3646993a-2915-4253-96b3-9478e3cc93c6,Taxable Brokerage,M. Tran Taxable Brokerage,USD,2022-07-10,Active
+acc_7b98d74e-12b8-4f08-b0f3-fcac067cd811,3646993a-2915-4253-96b3-9478e3cc93c6,Retirement (IRA),M. Tran Retirement (IRA),USD,2024-12-22,Active
+acc_a4aaf157-fa08-467e-8f9a-154b21d8ac22,3646993a-2915-4253-96b3-9478e3cc93c6,Trust,M. Tran Trust,USD,2024-11-15,Active
+acc_6bcbbf2e-dd5d-4b46-b9b2-40a381086bc9,3646993a-2915-4253-96b3-9478e3cc93c6,Taxable Brokerage,M. Tran Taxable Brokerage,USD,2022-03-31,Active
+acc_03bc2d5d-029d-4777-a9da-f1e9f9bc921d,3646993a-2915-4253-96b3-9478e3cc93c6,Trust,M. Tran Trust,USD,2025-06-09,Active
+acc_7b290f9a-d169-4096-a4da-ef243bd0943d,c1802793-bb54-42c3-8953-78ff73f02c58,Joint Account,M. Kidd Joint Account,USD,2021-03-05,Active
+acc_199dbcb6-2bc3-4d0a-a86f-8fad2c1baeda,c1802793-bb54-42c3-8953-78ff73f02c58,Joint Account,M. Kidd Joint Account,USD,2023-05-13,Active
+acc_8e63e184-24d2-4d7f-91d7-92304081ad3b,003efa72-c88e-4ba7-9d05-27e2434cad0c,Trust,J. Rodriguez Trust,USD,2023-01-13,Active
+acc_9d412f46-3db8-4303-a5b8-5f56df6bd376,003efa72-c88e-4ba7-9d05-27e2434cad0c,Retirement (IRA),J. Rodriguez Retirement (IRA),USD,2024-08-07,Active
+acc_186be622-123d-4c21-aa74-48631ac705dc,003efa72-c88e-4ba7-9d05-27e2434cad0c,Trust,J. Rodriguez Trust,USD,2022-12-22,Active
+acc_28356dbf-823e-44f5-8d34-98f36b92ee79,ff23c36d-7ba8-4f80-9f17-bff61347ac23,Trust,K. Freeman Trust,USD,2023-04-15,Active
+acc_c0e19e71-9422-4013-b47b-8585b6c4488b,ff23c36d-7ba8-4f80-9f17-bff61347ac23,Retirement (IRA),K. Freeman Retirement (IRA),USD,2021-12-05,Active
+acc_3a3e2a5f-1948-4d55-a6ba-7a9d3bc6f504,ff23c36d-7ba8-4f80-9f17-bff61347ac23,Retirement (IRA),K. Freeman Retirement (IRA),USD,2023-03-28,Active
+acc_99647896-03b4-434a-95f0-73068f2594d0,ff23c36d-7ba8-4f80-9f17-bff61347ac23,Retirement (IRA),K. Freeman Retirement (IRA),USD,2023-09-07,Active
+acc_f7b107ac-0abf-4b91-89c3-9f45ad69a7a8,ff23c36d-7ba8-4f80-9f17-bff61347ac23,Joint Account,K. Freeman Joint Account,USD,2022-09-29,Active
+acc_861312fd-d93f-410a-b3c4-60f79c1709a2,4f641dcc-a3ab-4ef2-811c-ec47fb7e3069,Retirement (IRA),D. Spencer Retirement (IRA),USD,2024-07-09,Active
+acc_c74eb29e-cc1d-4396-9990-baeb952cc346,4f641dcc-a3ab-4ef2-811c-ec47fb7e3069,Joint Account,D. Spencer Joint Account,USD,2024-07-09,Active
+acc_0ee677f3-4f9a-44c2-8e0e-2e0a497a35df,4f641dcc-a3ab-4ef2-811c-ec47fb7e3069,Joint Account,D. Spencer Joint Account,USD,2023-11-05,Active
+acc_59d7fb9c-90da-43d9-abf5-5ec96fb39038,4f641dcc-a3ab-4ef2-811c-ec47fb7e3069,Taxable Brokerage,D. Spencer Taxable Brokerage,USD,2024-09-27,Active
+acc_864b88ca-036a-4638-8b8f-dc5de3475518,4f641dcc-a3ab-4ef2-811c-ec47fb7e3069,Taxable Brokerage,D. Spencer Taxable Brokerage,USD,2024-04-15,Active
+acc_8cafeba3-835e-4c09-83da-9718338b2eae,d1c3bb17-fbdf-4f99-8aae-ba65d2bf4ec3,Retirement (IRA),C. Gonzalez Retirement (IRA),USD,2025-04-21,Active
+acc_6acfd776-4e6f-4efb-86b8-ba7b2e120226,d1c3bb17-fbdf-4f99-8aae-ba65d2bf4ec3,Joint Account,C. Gonzalez Joint Account,USD,2022-06-11,Active
+acc_906af284-33f9-4c6a-b539-2d1ddda36d2a,d1c3bb17-fbdf-4f99-8aae-ba65d2bf4ec3,Taxable Brokerage,C. Gonzalez Taxable Brokerage,USD,2022-07-08,Active
+acc_395ed1af-d625-49ec-a7c7-5ebc11188f86,d1c3bb17-fbdf-4f99-8aae-ba65d2bf4ec3,Retirement (IRA),C. Gonzalez Retirement (IRA),USD,2022-12-19,Active
+acc_df654653-1bf7-4a23-b298-47ed1356690e,d1c3bb17-fbdf-4f99-8aae-ba65d2bf4ec3,Joint Account,C. Gonzalez Joint Account,USD,2023-07-26,Active
+acc_2dd403c6-cb9a-4e1a-8429-f5df555cdc96,6f3d1793-a041-4575-9468-fd14d776a664,Trust,C. Nelson Trust,USD,2024-02-16,Active
+acc_138ace77-435b-4e09-a748-2bf8acdd2fed,e74860e8-dcd6-43a0-967d-5f90449d001b,Trust,P. Johnson Trust,USD,2021-09-30,Active
+acc_33ce6ae2-ddbc-40d3-9b82-127be1fc31c9,e74860e8-dcd6-43a0-967d-5f90449d001b,Joint Account,P. Johnson Joint Account,USD,2023-04-13,Active
+acc_26704dc8-844c-4621-b399-79798e021c0a,e74860e8-dcd6-43a0-967d-5f90449d001b,Taxable Brokerage,P. Johnson Taxable Brokerage,USD,2023-10-12,Active
+acc_8e0a5d89-ce73-432e-81b0-9611f2483ce0,46592d43-e72b-4ac1-8b6d-206bba3fa012,Trust,S. Green Trust,USD,2023-08-13,Active
+acc_0e13fc4c-6c41-430b-9383-65033bef24b5,46592d43-e72b-4ac1-8b6d-206bba3fa012,Trust,S. Green Trust,USD,2024-06-07,Active
+acc_f9a067ad-b07e-426f-bc25-1651431bb67e,46592d43-e72b-4ac1-8b6d-206bba3fa012,Taxable Brokerage,S. Green Taxable Brokerage,USD,2024-07-06,Active
+acc_fda6e2af-44e4-42d9-a20e-e7112219f87c,46592d43-e72b-4ac1-8b6d-206bba3fa012,Taxable Brokerage,S. Green Taxable Brokerage,USD,2024-05-05,Active
+acc_34cc9c60-5138-45c1-bad0-17634347f89c,4293d30d-5f2e-43d6-a230-96c2229111c5,Retirement (IRA),C. Barnes Retirement (IRA),USD,2024-08-30,Active
+acc_2617610f-7d17-46ae-b451-f248d65d1798,4293d30d-5f2e-43d6-a230-96c2229111c5,Joint Account,C. Barnes Joint Account,USD,2024-05-06,Active
+acc_07ddb1ba-82ec-490a-be3b-70c4f3358895,786c7886-a7c8-4ecc-aaef-74b5bfb7136b,Joint Account,P. Morgan Joint Account,USD,2023-10-01,Active
+acc_64d42129-2482-459f-bd5f-74854ec155b9,786c7886-a7c8-4ecc-aaef-74b5bfb7136b,Trust,P. Morgan Trust,USD,2023-10-16,Active
+acc_b77d2875-31a2-4aa1-94e4-f1389bee4243,786c7886-a7c8-4ecc-aaef-74b5bfb7136b,Taxable Brokerage,P. Morgan Taxable Brokerage,USD,2023-07-20,Active
+acc_a199bb27-af08-4440-b823-8e2e51b744dd,3d1dcd27-4b3a-48ca-96ab-a1ac1d119fdc,Trust,M. Douglas Trust,USD,2023-07-03,Active
+acc_2f8dc01f-def2-4dbd-bc53-75513e1280b5,3d1dcd27-4b3a-48ca-96ab-a1ac1d119fdc,Retirement (IRA),M. Douglas Retirement (IRA),USD,2024-01-24,Active
+acc_f7878198-3a4a-4d97-9a4c-e4d69597c49f,3d1dcd27-4b3a-48ca-96ab-a1ac1d119fdc,Trust,M. Douglas Trust,USD,2025-01-21,Active
+acc_d710a12f-47b6-452b-a95b-fc6091e2be75,3d1dcd27-4b3a-48ca-96ab-a1ac1d119fdc,Joint Account,M. Douglas Joint Account,USD,2022-08-17,Active
+acc_53eb2b7c-69f9-4ab1-9a98-31257b710b48,c503898a-bb05-4d83-86fc-5a43616021b7,Taxable Brokerage,S. Cantu Taxable Brokerage,USD,2024-03-12,Active
+acc_5db988ac-4795-4916-9550-4c7efacc70da,c503898a-bb05-4d83-86fc-5a43616021b7,Trust,S. Cantu Trust,USD,2023-08-25,Active
+acc_4c9f314b-3a0a-407c-9075-885750f40cf1,c503898a-bb05-4d83-86fc-5a43616021b7,Taxable Brokerage,S. Cantu Taxable Brokerage,USD,2023-11-14,Active
+acc_89c04a0b-e36f-490b-9b02-ce7c2064020b,c503898a-bb05-4d83-86fc-5a43616021b7,Retirement (IRA),S. Cantu Retirement (IRA),USD,2021-07-27,Active
+acc_38afb9ef-bc31-453a-b348-e32e70943af1,c503898a-bb05-4d83-86fc-5a43616021b7,Retirement (IRA),S. Cantu Retirement (IRA),USD,2023-11-02,Active
+acc_961649c2-3928-4556-969c-0b90f4a361af,057d54ce-9423-45d5-830d-382b80d59742,Trust,R. Randolph Trust,USD,2023-06-27,Active
+acc_6df2bc9a-65a2-477a-99f4-68e5ae758af3,057d54ce-9423-45d5-830d-382b80d59742,Retirement (IRA),R. Randolph Retirement (IRA),USD,2024-03-10,Active
+acc_1a01c1df-329a-46ad-8ca6-864d08c9f9da,057d54ce-9423-45d5-830d-382b80d59742,Joint Account,R. Randolph Joint Account,USD,2024-09-15,Active
+acc_5cdf9a09-48ee-4966-9712-c2a8a1db123a,057d54ce-9423-45d5-830d-382b80d59742,Taxable Brokerage,R. Randolph Taxable Brokerage,USD,2024-04-30,Active
+acc_0caa47bd-fc7c-4406-ac16-ef7e3f612d7b,057d54ce-9423-45d5-830d-382b80d59742,Joint Account,R. Randolph Joint Account,USD,2024-08-04,Active
+acc_951896d0-111d-429a-bd78-ea331700297f,c04e6ba4-b4e7-492d-9ae2-17997e33c502,Retirement (IRA),V. Ware Retirement (IRA),USD,2023-10-03,Active
+acc_86795dbb-f6fd-485a-ab0b-0c732d223080,c04e6ba4-b4e7-492d-9ae2-17997e33c502,Retirement (IRA),V. Ware Retirement (IRA),USD,2023-04-27,Active
+acc_bcabe849-fee6-4a45-aa90-be078a2c3bb7,c04e6ba4-b4e7-492d-9ae2-17997e33c502,Trust,V. Ware Trust,USD,2023-12-07,Active
+acc_b68f9cc2-86d6-4482-b82c-719c982c1e95,c04e6ba4-b4e7-492d-9ae2-17997e33c502,Taxable Brokerage,V. Ware Taxable Brokerage,USD,2024-02-19,Active
+acc_a51d61e7-4731-42b0-90bb-616b52613fff,879743c9-1215-4a06-bd31-01d4de40b325,Taxable Brokerage,M. Bruce Taxable Brokerage,USD,2025-06-06,Active
+acc_e5140403-8f55-4a19-9469-23a4f156ca81,879743c9-1215-4a06-bd31-01d4de40b325,Retirement (IRA),M. Bruce Retirement (IRA),USD,2023-06-06,Active
+acc_3022b115-1457-44e3-b6cd-f72f144303af,879743c9-1215-4a06-bd31-01d4de40b325,Joint Account,M. Bruce Joint Account,USD,2023-01-24,Active
+acc_fb83d028-f57f-45e6-8269-ee3dd3b74922,a957833e-5d07-48a0-9498-fcd828ec6824,Trust,M. Preston Trust,USD,2024-03-29,Active
+acc_d5569167-eb9e-4e26-a6e2-4a813e45690b,a957833e-5d07-48a0-9498-fcd828ec6824,Trust,M. Preston Trust,USD,2024-10-23,Active
+acc_448a1334-4f26-4f6b-b7e9-effa1a7ceefd,fa5d20f3-177f-4460-8a8d-f65da1cfde77,Joint Account,J. Hartman Joint Account,USD,2022-12-14,Active
+acc_796ca0ab-9f7b-4051-91d6-8db608f61d36,fa5d20f3-177f-4460-8a8d-f65da1cfde77,Retirement (IRA),J. Hartman Retirement (IRA),USD,2023-12-19,Active
+acc_51fb0484-e96b-4f99-ad47-cf49dd45bd7a,fa5d20f3-177f-4460-8a8d-f65da1cfde77,Retirement (IRA),J. Hartman Retirement (IRA),USD,2025-06-07,Active
+acc_2b9606bb-1fdb-454a-8a8b-4940c8b69de5,fa5d20f3-177f-4460-8a8d-f65da1cfde77,Taxable Brokerage,J. Hartman Taxable Brokerage,USD,2023-02-03,Active
+acc_1dbed573-c962-41d5-b284-2dbab2ee8dd8,244b2d17-e027-41a9-997e-c86d2f478b63,Trust,R. Dudley Trust,USD,2023-06-25,Active
+acc_7fe72aa5-72b5-48d0-b240-fb6f9ac36356,244b2d17-e027-41a9-997e-c86d2f478b63,Trust,R. Dudley Trust,USD,2025-05-18,Active
+acc_9e7b1c2e-9e07-43de-8d5d-a74357ab3466,244b2d17-e027-41a9-997e-c86d2f478b63,Joint Account,R. Dudley Joint Account,USD,2024-01-21,Active
+acc_b48394f0-1cad-4c57-b281-cbf36333d7a4,60b48204-3c92-4df9-87a9-8d707fdc2a3a,Trust,J. Ellis Trust,USD,2023-03-29,Active
+acc_38723717-86b0-4a01-b8b2-2edaeca7bc51,60b48204-3c92-4df9-87a9-8d707fdc2a3a,Taxable Brokerage,J. Ellis Taxable Brokerage,USD,2022-08-23,Active
+acc_972e94fd-2e0c-43dd-8dce-4413ee8698c4,60b48204-3c92-4df9-87a9-8d707fdc2a3a,Taxable Brokerage,J. Ellis Taxable Brokerage,USD,2023-10-31,Active
+acc_cfb71f2b-c85d-4a92-b5eb-7f698fb52026,60b48204-3c92-4df9-87a9-8d707fdc2a3a,Trust,J. Ellis Trust,USD,2023-09-07,Active
+acc_943730e7-0bee-44d0-a80e-cd276a201528,60b48204-3c92-4df9-87a9-8d707fdc2a3a,Taxable Brokerage,J. Ellis Taxable Brokerage,USD,2024-04-13,Active
+acc_a0238122-bfff-4e04-8065-b4f36b8b26e9,a0dfbc50-100f-48ec-8f74-0722a2b02d7d,Trust,N. Jacobson Trust,USD,2024-02-20,Active
+acc_9634f371-39d6-4f59-91cb-5cb0c3d8f27f,a0dfbc50-100f-48ec-8f74-0722a2b02d7d,Trust,N. Jacobson Trust,USD,2025-04-03,Active
+acc_55750085-4e1b-4b8b-9d70-ba83c0c8df3b,a0dfbc50-100f-48ec-8f74-0722a2b02d7d,Taxable Brokerage,N. Jacobson Taxable Brokerage,USD,2025-05-12,Active
+acc_c2b0dfbb-8940-49cd-a795-42df74b678ce,a0dfbc50-100f-48ec-8f74-0722a2b02d7d,Trust,N. Jacobson Trust,USD,2023-03-19,Active
+acc_b8b728ef-0aaf-4e0f-bb7d-6a1ef2caaa20,b01eb628-168d-433b-a77b-07c3457b8daf,Retirement (IRA),T. White Retirement (IRA),USD,2023-11-13,Active
+acc_7933a4f8-442e-408f-8a73-809264ecb59f,b01eb628-168d-433b-a77b-07c3457b8daf,Trust,T. White Trust,USD,2025-06-16,Active
+acc_7a77a27c-1228-494f-8454-c7bfff5dda29,b01eb628-168d-433b-a77b-07c3457b8daf,Retirement (IRA),T. White Retirement (IRA),USD,2025-01-25,Active
+acc_02026285-9c14-43e4-98f4-d8aae7e85cf1,f953a9e9-22ef-49e6-8b73-382480208a87,Taxable Brokerage,S. Garrison Taxable Brokerage,USD,2024-02-28,Active
+acc_61afa03d-6fd3-46c3-ab75-3162468ba4f7,80abbb4a-f06a-49cb-bf35-b5ae7c8b1485,Retirement (IRA),J. Marks Retirement (IRA),USD,2025-04-03,Active
+acc_d4eda712-5401-4942-a047-9636f957df22,4f0ce0c9-09b8-43bc-b92e-7e4d0c28547f,Trust,J. Ross Trust,USD,2023-03-12,Active
+acc_df473e5b-9d04-4df4-9480-e3464f245419,4f0ce0c9-09b8-43bc-b92e-7e4d0c28547f,Retirement (IRA),J. Ross Retirement (IRA),USD,2023-03-06,Active
+acc_5d43309c-a797-44c3-ab61-5b0b15986e44,4f0ce0c9-09b8-43bc-b92e-7e4d0c28547f,Taxable Brokerage,J. Ross Taxable Brokerage,USD,2021-05-31,Active
+acc_8b782a7a-a716-4070-8006-b0992d8b597b,d073ae6a-03a8-46e6-bfb0-5980b4ca61c6,Retirement (IRA),T. Griffith Retirement (IRA),USD,2025-02-26,Active
+acc_09c77633-83af-4bbc-bfb1-e77a5c36ec74,d073ae6a-03a8-46e6-bfb0-5980b4ca61c6,Retirement (IRA),T. Griffith Retirement (IRA),USD,2025-02-02,Active
+acc_3cff9a5e-e87c-4b4c-8483-47f2c6344814,d073ae6a-03a8-46e6-bfb0-5980b4ca61c6,Retirement (IRA),T. Griffith Retirement (IRA),USD,2024-12-18,Active
+acc_9b752f56-34c8-4ecd-b7b4-e1c24773869a,e8082052-7bad-4004-a5db-cb6e8bff7129,Joint Account,L. Brown Joint Account,USD,2025-01-25,Active
+acc_623ff879-bcdf-422a-867b-278003860785,e8082052-7bad-4004-a5db-cb6e8bff7129,Joint Account,L. Brown Joint Account,USD,2022-12-17,Active
+acc_45d93fa8-3c1c-4195-aa64-0ce1f8b6f3b8,e8082052-7bad-4004-a5db-cb6e8bff7129,Retirement (IRA),L. Brown Retirement (IRA),USD,2021-08-10,Active
+acc_7d9e6761-9f16-4bc3-8a1e-35b92dba1945,e8082052-7bad-4004-a5db-cb6e8bff7129,Trust,L. Brown Trust,USD,2024-10-17,Active
+acc_baafbfa7-812a-4819-acf4-b55effffb4c1,b2e51745-f9f0-48ac-8c06-b3be49a19e31,Taxable Brokerage,M. Brown Taxable Brokerage,USD,2024-12-21,Active
+acc_463aaa81-42ae-4843-b87b-9512839abe93,b2e51745-f9f0-48ac-8c06-b3be49a19e31,Retirement (IRA),M. Brown Retirement (IRA),USD,2023-02-28,Active
+acc_4350189b-58fb-48dd-8442-afafbdb3ccf7,b2e51745-f9f0-48ac-8c06-b3be49a19e31,Retirement (IRA),M. Brown Retirement (IRA),USD,2025-06-05,Active
+acc_a3ccd47e-b9b8-43c7-8647-88526efb5558,b859b320-5d6d-4dfd-af86-0d9cc8cc8fab,Retirement (IRA),C. Molina Retirement (IRA),USD,2025-03-01,Active
+acc_f975d466-acbc-4c50-8b3d-c177fb65c125,b859b320-5d6d-4dfd-af86-0d9cc8cc8fab,Joint Account,C. Molina Joint Account,USD,2024-11-15,Active
+acc_2fe9da13-e9f4-44bf-bdc8-361f1fa92460,37c1600c-3caa-4f56-8485-fbe3f0c63f59,Taxable Brokerage,B. Pruitt Taxable Brokerage,USD,2025-01-10,Active
+acc_0fd8f9d5-79c6-40c9-970d-95915ee9dfbb,1961c9d2-1c12-413b-9a04-09dc38cce7ca,Joint Account,K. Perez Joint Account,USD,2025-05-09,Active
+acc_41d5027d-40fe-4114-b92a-c075fd4c1857,09f96af1-3af4-442d-9744-9ee7efb17641,Retirement (IRA),M. Steele Retirement (IRA),USD,2024-08-27,Active
+acc_683d05dc-6133-4153-82b4-e188d809f3ed,09f96af1-3af4-442d-9744-9ee7efb17641,Trust,M. Steele Trust,USD,2025-06-07,Active
+acc_e91d163d-757a-4e9a-9336-3614655d4f98,9f6ace8b-f460-4202-b4cd-c29baf4d85c5,Trust,O. Anderson Trust,USD,2024-11-25,Active
+acc_d809026e-0bfa-4299-bfbd-00077bf1d2e8,9f6ace8b-f460-4202-b4cd-c29baf4d85c5,Joint Account,O. Anderson Joint Account,USD,2023-06-29,Active
+acc_a4e1ba5d-c00e-499d-ad52-fd7ac2b2127b,9f6ace8b-f460-4202-b4cd-c29baf4d85c5,Trust,O. Anderson Trust,USD,2023-02-05,Active
+acc_3d0dbe4e-8f59-431d-aea5-67c16a7a199b,9f6ace8b-f460-4202-b4cd-c29baf4d85c5,Taxable Brokerage,O. Anderson Taxable Brokerage,USD,2023-07-12,Active
+acc_89fcb730-91d4-4492-aa66-ce68577ca69d,9ed630e0-0185-4b1c-ae8a-e0255f0358ec,Retirement (IRA),T. Kidd Retirement (IRA),USD,2023-04-09,Active
+acc_184ff59d-d3b9-472c-b880-653abfcdacc2,9ed630e0-0185-4b1c-ae8a-e0255f0358ec,Joint Account,T. Kidd Joint Account,USD,2024-04-19,Active
+acc_7574751d-3aad-4f3c-ac57-c6cd05d3d3d7,8ca6407b-e6b7-45d0-ace0-72401131fecc,Joint Account,T. Russell Joint Account,USD,2021-01-02,Active
+acc_6bf8df0e-c1ed-4527-877e-1ab0ac350133,8ca6407b-e6b7-45d0-ace0-72401131fecc,Retirement (IRA),T. Russell Retirement (IRA),USD,2025-03-16,Active
+acc_7d4698ba-b2b7-4ca1-9e58-1654041a3795,8ca6407b-e6b7-45d0-ace0-72401131fecc,Taxable Brokerage,T. Russell Taxable Brokerage,USD,2021-02-20,Active
+acc_848e4675-5d48-4751-b9f0-bc06b18ee346,8ca6407b-e6b7-45d0-ace0-72401131fecc,Retirement (IRA),T. Russell Retirement (IRA),USD,2024-03-17,Active
+acc_a1fd5d35-ea12-40ee-89ab-e85cf6470762,818655a4-34b6-4980-82fe-5b18cd5fe78f,Retirement (IRA),D. Smith Retirement (IRA),USD,2024-10-23,Active
+acc_04f9c946-ea9a-490f-b019-a02769c74adf,818655a4-34b6-4980-82fe-5b18cd5fe78f,Joint Account,D. Smith Joint Account,USD,2025-05-21,Active
+acc_edeb8511-3b73-4fb7-b036-9bf9a933f7a0,818655a4-34b6-4980-82fe-5b18cd5fe78f,Trust,D. Smith Trust,USD,2024-09-26,Active
+acc_536cd28f-67d8-474e-992c-05927d71d19e,818655a4-34b6-4980-82fe-5b18cd5fe78f,Trust,D. Smith Trust,USD,2024-10-11,Active
+acc_0f2a37d6-fc9d-4bd5-b23b-5856c8f00952,818655a4-34b6-4980-82fe-5b18cd5fe78f,Trust,D. Smith Trust,USD,2025-05-10,Active
+acc_f91f05cb-47d7-44f4-845e-d60c7ddd90e0,764c7f2d-c9ae-4e5b-8fe1-800e8953ae28,Trust,K. Bartlett Trust,USD,2023-02-06,Active
+acc_79f138b3-e3f1-43fa-95d3-6d61042a71ad,8fe76fdc-07bb-4f05-92ec-0da8549b5c1f,Joint Account,C. Webb Joint Account,USD,2025-01-18,Active
+acc_a58e150b-5110-4f0e-ab2c-34fbd3efafeb,8fe76fdc-07bb-4f05-92ec-0da8549b5c1f,Taxable Brokerage,C. Webb Taxable Brokerage,USD,2024-10-29,Active
+acc_ea03cdc3-ac71-4470-8cc4-db1750c2f2a7,8fe76fdc-07bb-4f05-92ec-0da8549b5c1f,Taxable Brokerage,C. Webb Taxable Brokerage,USD,2024-12-27,Active
+acc_5ebcac79-669a-4f07-99f0-cc55af93b937,34b858aa-2df2-4d63-bf92-0f763fcd76c2,Trust,J. Nguyen Trust,USD,2024-10-11,Active
+acc_44c73a8e-8a1c-45d3-a068-a8141ef112ea,34b858aa-2df2-4d63-bf92-0f763fcd76c2,Taxable Brokerage,J. Nguyen Taxable Brokerage,USD,2025-03-25,Active
+acc_cd1211f0-615f-4f43-9df2-0c3b049a0a06,34b858aa-2df2-4d63-bf92-0f763fcd76c2,Trust,J. Nguyen Trust,USD,2025-04-10,Active
+acc_b8ad35c0-5db9-455a-b9b0-4b046f47ee09,34b858aa-2df2-4d63-bf92-0f763fcd76c2,Joint Account,J. Nguyen Joint Account,USD,2023-03-02,Active
+acc_b0732976-5967-4527-9b21-aef08e5d46cb,21705312-51e1-4662-ab75-9ee1ac940f14,Trust,B. Perez Trust,USD,2024-06-28,Active
+acc_9b74e8f8-2f51-4871-9ae4-dea1226604c3,d4d3cb46-9ba4-48a0-a79c-66e08a51e545,Joint Account,M. Byrd Joint Account,USD,2023-03-31,Active
+acc_133bcceb-3d2f-46bf-8901-b50eaa78bb62,f59a262f-c16f-472e-b3f3-f3d6a98a0e1c,Retirement (IRA),R. Marshall Retirement (IRA),USD,2022-01-08,Active
+acc_9e13fc90-0793-4a86-96de-c5a566d1283f,f59a262f-c16f-472e-b3f3-f3d6a98a0e1c,Taxable Brokerage,R. Marshall Taxable Brokerage,USD,2023-08-19,Active
+acc_94fed30d-a7d1-40a2-a3f6-10c2346d308b,f59a262f-c16f-472e-b3f3-f3d6a98a0e1c,Joint Account,R. Marshall Joint Account,USD,2022-02-15,Active
+acc_8993934e-9bfe-4979-ae09-85fccf4e105a,9b1d1d47-0c6c-4d8e-8338-ad64c1647917,Trust,A. Rodriguez Trust,USD,2024-03-31,Active
+acc_b2a5d2f0-c64c-41b0-8945-8b172f3871cb,9b1d1d47-0c6c-4d8e-8338-ad64c1647917,Trust,A. Rodriguez Trust,USD,2022-01-27,Active
+acc_675445d4-dbad-4a34-940e-202835c8ba16,4568b01e-def8-4439-9831-1a0f66f6b51c,Joint Account,A. Thomas Joint Account,USD,2024-08-13,Active
+acc_cd4dacb3-75d4-4fd6-867c-c57a9d178e72,4568b01e-def8-4439-9831-1a0f66f6b51c,Retirement (IRA),A. Thomas Retirement (IRA),USD,2024-06-28,Active
+acc_95cc6271-3f30-40cf-8c5d-8f2dd3a60bc7,4568b01e-def8-4439-9831-1a0f66f6b51c,Joint Account,A. Thomas Joint Account,USD,2025-05-15,Active
+acc_0528cfae-1b20-4d63-85b2-a4c0452de3fe,4568b01e-def8-4439-9831-1a0f66f6b51c,Taxable Brokerage,A. Thomas Taxable Brokerage,USD,2023-10-06,Active
+acc_f695066a-194b-469e-bd06-ba8d81aa8740,4568b01e-def8-4439-9831-1a0f66f6b51c,Trust,A. Thomas Trust,USD,2025-04-03,Active
+acc_c70e1d76-fe74-45f2-b237-7c8bbe1b24c5,6645504a-4acd-402b-b10f-547239d39bf6,Trust,P. Sullivan Trust,USD,2023-03-04,Active
+acc_240e440a-d4ae-4d38-83c3-d82b254452c9,6645504a-4acd-402b-b10f-547239d39bf6,Taxable Brokerage,P. Sullivan Taxable Brokerage,USD,2021-10-28,Active
+acc_6f117043-3920-43d8-99e5-791f8252dd88,40c46b82-1013-4cbf-9fdf-ed9ce46de4a8,Trust,S. Williams Trust,USD,2023-04-20,Active
+acc_313f73ce-2b4d-4dfa-b791-2e1aed1ba479,40c46b82-1013-4cbf-9fdf-ed9ce46de4a8,Taxable Brokerage,S. Williams Taxable Brokerage,USD,2023-04-10,Active
+acc_38662b71-4c2a-4206-808f-34bc3d4a2bf4,40c46b82-1013-4cbf-9fdf-ed9ce46de4a8,Joint Account,S. Williams Joint Account,USD,2022-05-17,Active
+acc_64eb5c71-b709-4c53-b70d-5f82702ebc5a,4ae22647-0979-4a13-ae4e-7720ebbdd193,Trust,J. Bell Trust,USD,2022-12-26,Active
+acc_3ebd6771-8f68-475c-8b3a-0261a3b4fa2b,4ae22647-0979-4a13-ae4e-7720ebbdd193,Retirement (IRA),J. Bell Retirement (IRA),USD,2023-11-24,Active
+acc_0d2d0cf2-1c22-4809-b564-90e9365a417b,4ae22647-0979-4a13-ae4e-7720ebbdd193,Retirement (IRA),J. Bell Retirement (IRA),USD,2023-06-22,Active
+acc_91450fe1-13c9-4912-b245-c39e47b50140,4ae22647-0979-4a13-ae4e-7720ebbdd193,Taxable Brokerage,J. Bell Taxable Brokerage,USD,2022-08-27,Active
+acc_4eb049ec-138c-486a-9933-f6959a54e84d,49dcb615-f0db-46f8-85c4-a9d2f0d337e2,Retirement (IRA),V. Paul Retirement (IRA),USD,2021-01-25,Active
+acc_d1e957bc-4415-4e2b-b54b-54c8a7b31d53,49dcb615-f0db-46f8-85c4-a9d2f0d337e2,Retirement (IRA),V. Paul Retirement (IRA),USD,2020-08-31,Active
+acc_2d0c45a8-5147-49eb-9fca-39c04e7f6b99,49dcb615-f0db-46f8-85c4-a9d2f0d337e2,Taxable Brokerage,V. Paul Taxable Brokerage,USD,2021-05-08,Active
+acc_687afcd9-f220-4d83-84e6-e0b4f8ce3508,49dcb615-f0db-46f8-85c4-a9d2f0d337e2,Retirement (IRA),V. Paul Retirement (IRA),USD,2022-10-23,Active
+acc_45ce5393-330c-484a-b884-e44a5561632c,3d06454c-17b1-4f0e-8c81-54e6c877d71f,Retirement (IRA),J. Jenkins Retirement (IRA),USD,2024-12-15,Active
+acc_391d96b3-1beb-4192-af55-838c586d5fa5,3d06454c-17b1-4f0e-8c81-54e6c877d71f,Retirement (IRA),J. Jenkins Retirement (IRA),USD,2025-02-13,Active
+acc_ddbc01b5-6d4f-4267-8003-663059579333,3d06454c-17b1-4f0e-8c81-54e6c877d71f,Taxable Brokerage,J. Jenkins Taxable Brokerage,USD,2025-04-30,Active
+acc_77d1a6ae-897f-47ae-9320-f97a719c9a0f,3d06454c-17b1-4f0e-8c81-54e6c877d71f,Trust,J. Jenkins Trust,USD,2025-01-10,Active
+acc_2a8481c9-b027-443b-850c-73e8772a04c2,3d06454c-17b1-4f0e-8c81-54e6c877d71f,Joint Account,J. Jenkins Joint Account,USD,2025-01-29,Active
+acc_386040b2-ab07-4321-9e48-90a84acafc81,4c6b2ed4-42f4-4cc5-bdcc-683da587a37e,Retirement (IRA),W. Obrien Retirement (IRA),USD,2024-02-04,Active
+acc_72935712-0fc5-4d49-b574-a82a0019249d,f27af7f8-1f56-45ba-97ee-41747384aeb9,Taxable Brokerage,N. Nguyen Taxable Brokerage,USD,2021-09-13,Active
+acc_f8aefaea-5794-41ec-8f37-425a4babbf6e,f27af7f8-1f56-45ba-97ee-41747384aeb9,Joint Account,N. Nguyen Joint Account,USD,2022-05-25,Active
+acc_4064578a-85c0-4426-acdc-25fa6547b89c,09514946-cd79-47f5-833d-41158b1cc556,Joint Account,M. Moore Joint Account,USD,2023-11-22,Active
+acc_5288712f-f193-48b4-a0f9-d1057ab0575e,09514946-cd79-47f5-833d-41158b1cc556,Joint Account,M. Moore Joint Account,USD,2024-01-04,Active
+acc_aa03829d-fd4a-48f2-9582-b8ec1a7dd2b2,09514946-cd79-47f5-833d-41158b1cc556,Taxable Brokerage,M. Moore Taxable Brokerage,USD,2023-10-19,Active
+acc_cd12317e-6600-4ba1-b8ab-dcea6631074a,09514946-cd79-47f5-833d-41158b1cc556,Trust,M. Moore Trust,USD,2022-08-26,Active
+acc_dbe26be8-7b25-4e65-aebd-9363a569c3fb,1d112701-737a-4077-a5aa-934577b1bbe1,Trust,D. Weber Trust,USD,2025-04-30,Active
+acc_94e30b94-cd40-4619-90e7-0ed2302a012a,1d112701-737a-4077-a5aa-934577b1bbe1,Trust,D. Weber Trust,USD,2024-07-16,Active
+acc_9c8e6d97-f148-4990-a587-64c5a8a9bd36,0641fff4-de77-49dd-8de5-4bacc5daf20f,Joint Account,K. Burton Joint Account,USD,2022-07-02,Active
+acc_a17cdac0-0079-424f-bc09-ea32035d2d18,0641fff4-de77-49dd-8de5-4bacc5daf20f,Taxable Brokerage,K. Burton Taxable Brokerage,USD,2023-06-28,Active
+acc_2d703655-ba17-4086-bfb3-da9eeaaac27a,0641fff4-de77-49dd-8de5-4bacc5daf20f,Retirement (IRA),K. Burton Retirement (IRA),USD,2021-12-01,Active
+acc_843ab7eb-0b7b-4b02-9710-4e9f7f993a9f,07227ef5-ac85-4afc-9ec8-23f15e4deb7b,Retirement (IRA),E. Robertson Retirement (IRA),USD,2023-10-28,Active
+acc_744f485b-fa1a-4723-95f0-ff0bb75425f5,07227ef5-ac85-4afc-9ec8-23f15e4deb7b,Joint Account,E. Robertson Joint Account,USD,2023-07-25,Active
+acc_3265dcb1-eedf-419c-8f69-26a73b56bda5,07227ef5-ac85-4afc-9ec8-23f15e4deb7b,Trust,E. Robertson Trust,USD,2024-07-11,Active
+acc_5c16ffe4-0866-422a-b5f1-fd48a7933269,8edaff36-60ee-4f42-8d57-0fc1c0add7d9,Taxable Brokerage,K. Marshall Taxable Brokerage,USD,2023-07-27,Active
+acc_1903aa8c-dbd3-4f81-929d-da96a6b4c5dc,8edaff36-60ee-4f42-8d57-0fc1c0add7d9,Joint Account,K. Marshall Joint Account,USD,2023-03-14,Active
+acc_093fc1e3-e2b8-45ee-a042-8dbdbb4812ee,8edaff36-60ee-4f42-8d57-0fc1c0add7d9,Taxable Brokerage,K. Marshall Taxable Brokerage,USD,2023-07-21,Active
+acc_016b5ab2-f5ab-48c2-a182-a52c2a9cc449,8edaff36-60ee-4f42-8d57-0fc1c0add7d9,Joint Account,K. Marshall Joint Account,USD,2024-05-28,Active
+acc_451e0ce9-b08c-4771-a7c3-6ec1dcf3c688,8edaff36-60ee-4f42-8d57-0fc1c0add7d9,Retirement (IRA),K. Marshall Retirement (IRA),USD,2023-04-14,Active
+acc_2680e4c0-3232-44d8-b6cc-2cd7f3a7199f,a4cd1eeb-657b-42aa-acf2-ba6e9c89d686,Joint Account,L. Brown Joint Account,USD,2023-01-10,Active
+acc_ee118afe-a0c1-406e-8dfd-06987c51011b,a4cd1eeb-657b-42aa-acf2-ba6e9c89d686,Trust,L. Brown Trust,USD,2023-10-30,Active
+acc_0e9e88b9-e25c-409c-a34c-6392b119fb8c,a4cd1eeb-657b-42aa-acf2-ba6e9c89d686,Joint Account,L. Brown Joint Account,USD,2021-01-15,Active
+acc_6f00d314-e45b-4a74-9554-4d167835fb1d,a5263dd9-49cf-4a25-a0d8-c1d37a8e0404,Retirement (IRA),J. Spears Retirement (IRA),USD,2025-01-11,Active
+acc_1a35cc70-118b-4ee8-b917-adb82e43b050,a5263dd9-49cf-4a25-a0d8-c1d37a8e0404,Taxable Brokerage,J. Spears Taxable Brokerage,USD,2024-03-27,Active
+acc_7eb2c786-6d22-45ce-ba8c-18f20068290a,a5263dd9-49cf-4a25-a0d8-c1d37a8e0404,Taxable Brokerage,J. Spears Taxable Brokerage,USD,2023-07-20,Active
+acc_205de553-ca61-4e7f-9e34-f90673a1f73b,a5263dd9-49cf-4a25-a0d8-c1d37a8e0404,Retirement (IRA),J. Spears Retirement (IRA),USD,2024-12-10,Active
+acc_4383a4ea-8228-49a0-8908-eeca1950f178,a5263dd9-49cf-4a25-a0d8-c1d37a8e0404,Retirement (IRA),J. Spears Retirement (IRA),USD,2024-06-03,Active
+acc_73bed9dc-2acd-4884-b586-1b65b101b9f7,064663ae-cda7-4cfd-bcc2-b9873eb34684,Trust,J. Hall Trust,USD,2021-10-31,Active
+acc_201e568c-b6f9-45f0-86c7-37b15b85b355,064663ae-cda7-4cfd-bcc2-b9873eb34684,Trust,J. Hall Trust,USD,2021-03-29,Active
+acc_b4043fad-9f52-4b79-98c9-83c957cce7ce,064663ae-cda7-4cfd-bcc2-b9873eb34684,Trust,J. Hall Trust,USD,2025-02-13,Active
+acc_3bb7ae2a-48ac-4fc9-91cf-2d9f2cee42ab,064663ae-cda7-4cfd-bcc2-b9873eb34684,Taxable Brokerage,J. Hall Taxable Brokerage,USD,2024-08-17,Active
+acc_9b917242-1a13-49d5-ac77-43c618a88468,064663ae-cda7-4cfd-bcc2-b9873eb34684,Trust,J. Hall Trust,USD,2022-10-28,Active
+acc_5eccb377-fdf1-4de7-86a2-7d23c1ae2db6,f7dd45d6-8853-4161-8543-d4e7ef49f479,Joint Account,J. Hughes Joint Account,USD,2023-10-14,Active
+acc_33114c04-1a0e-40ef-b9e6-c990a2736cb0,f7dd45d6-8853-4161-8543-d4e7ef49f479,Taxable Brokerage,J. Hughes Taxable Brokerage,USD,2024-09-03,Active
+acc_aeb86529-5832-42c5-b240-7c87af1d00ab,b84ed154-fce1-4b93-a3b2-5afe5d6d1441,Joint Account,T. Jones Joint Account,USD,2025-05-09,Active
+acc_bd619fbe-9730-4af9-ba9f-913b82697489,b84ed154-fce1-4b93-a3b2-5afe5d6d1441,Taxable Brokerage,T. Jones Taxable Brokerage,USD,2025-04-21,Active
+acc_f6d053b5-12b9-422f-a925-5686c6f2c7ed,b84ed154-fce1-4b93-a3b2-5afe5d6d1441,Trust,T. Jones Trust,USD,2025-03-02,Active
+acc_98157037-ae79-491f-a345-b282138e9875,20adb57d-9918-4fee-aec3-25d5175cbbda,Joint Account,A. Anderson Joint Account,USD,2025-05-21,Active
+acc_fa8babfc-afc9-4593-81c9-92f1898cb068,20adb57d-9918-4fee-aec3-25d5175cbbda,Taxable Brokerage,A. Anderson Taxable Brokerage,USD,2024-12-30,Active
+acc_739206df-7e28-401d-8c66-bda1707da2e0,20adb57d-9918-4fee-aec3-25d5175cbbda,Trust,A. Anderson Trust,USD,2025-06-10,Active
+acc_d43800ae-43aa-47b4-97d0-3ab4c1284569,20adb57d-9918-4fee-aec3-25d5175cbbda,Taxable Brokerage,A. Anderson Taxable Brokerage,USD,2025-01-07,Active
+acc_d41170e8-41be-4029-808e-9cceab40a3d5,fb630a58-27a0-45ad-b68d-23b3bcaa5030,Taxable Brokerage,M. Taylor Taxable Brokerage,USD,2023-10-29,Active
+acc_a1d3d13b-e74d-47eb-938f-279439fad281,fb630a58-27a0-45ad-b68d-23b3bcaa5030,Trust,M. Taylor Trust,USD,2024-07-27,Active
+acc_87e04399-c8fa-4981-9814-4e4661dfa8d2,fb630a58-27a0-45ad-b68d-23b3bcaa5030,Trust,M. Taylor Trust,USD,2024-03-12,Active
+acc_91124e0b-29ad-4af4-92a6-aac8e24d5d9b,e4a7284a-73ad-44a4-bc76-b85f0a598382,Joint Account,D. Riddle Joint Account,USD,2022-02-02,Active
+acc_ae7499fe-43bd-4590-9ab1-1e8df066c1ce,e4a7284a-73ad-44a4-bc76-b85f0a598382,Joint Account,D. Riddle Joint Account,USD,2022-11-19,Active
+acc_7852f01a-f2e2-42a5-aa39-552e3ec0f8e2,e4a7284a-73ad-44a4-bc76-b85f0a598382,Retirement (IRA),D. Riddle Retirement (IRA),USD,2022-08-03,Active
+acc_38110eca-0ee1-4d5d-9143-8847db9ac233,e4a7284a-73ad-44a4-bc76-b85f0a598382,Retirement (IRA),D. Riddle Retirement (IRA),USD,2025-01-06,Active
+acc_5b9fbd9e-d08a-454f-bf35-bdf0f53645e2,608199ff-4968-42a2-a634-c338f443dde1,Taxable Brokerage,Z. Hines Taxable Brokerage,USD,2025-05-24,Active
+acc_b3cd42db-0c33-46d4-a256-ae8faa9a97d3,d4b18905-b55a-4dd1-82e8-8f1e68bd9748,Taxable Brokerage,E. Morris Taxable Brokerage,USD,2024-07-21,Active
+acc_b9c4b382-2983-4038-8dbf-21ad8f47f75d,d4b18905-b55a-4dd1-82e8-8f1e68bd9748,Taxable Brokerage,E. Morris Taxable Brokerage,USD,2023-05-17,Active
+acc_d275ff83-aa03-4f27-9d10-0c3f399f94b3,d4b18905-b55a-4dd1-82e8-8f1e68bd9748,Joint Account,E. Morris Joint Account,USD,2024-11-05,Active
+acc_4a1500f7-afb1-428f-ae39-c60f9a8d4052,d4b18905-b55a-4dd1-82e8-8f1e68bd9748,Retirement (IRA),E. Morris Retirement (IRA),USD,2022-12-16,Active
+acc_2ac76b55-25cc-4ffc-bb49-5c850594092f,18cb0129-cecf-4202-ac3a-fff98a8fa7f7,Joint Account,K. Davis Joint Account,USD,2025-04-20,Active
+acc_264cc5f6-b957-4871-bcf2-460628c6d78d,18cb0129-cecf-4202-ac3a-fff98a8fa7f7,Trust,K. Davis Trust,USD,2025-03-21,Active
+acc_e59a5a5a-76f1-4dfb-9931-2f7745182ad7,18cb0129-cecf-4202-ac3a-fff98a8fa7f7,Taxable Brokerage,K. Davis Taxable Brokerage,USD,2025-02-20,Active
+acc_42b2d76d-a411-42e9-b597-b90d560ab497,aeeb9df7-feab-4c6f-bdbb-6e0feed88649,Trust,D. Mckenzie Trust,USD,2024-08-01,Active
+acc_99dc1044-a407-44a0-b00a-6c09b42e2c6c,aeeb9df7-feab-4c6f-bdbb-6e0feed88649,Trust,D. Mckenzie Trust,USD,2024-08-24,Active
+acc_b6dfbca4-28f5-4644-8aad-40af28b56b57,aeeb9df7-feab-4c6f-bdbb-6e0feed88649,Retirement (IRA),D. Mckenzie Retirement (IRA),USD,2024-05-04,Active
+acc_60cef399-28ca-463d-b9b6-b16115affda6,aeeb9df7-feab-4c6f-bdbb-6e0feed88649,Trust,D. Mckenzie Trust,USD,2024-07-04,Active
+acc_b01d10c8-7c1f-4cf2-83b4-8cc8f49c58a8,aeeb9df7-feab-4c6f-bdbb-6e0feed88649,Trust,D. Mckenzie Trust,USD,2024-10-20,Active
+acc_cb175a06-23b3-42ce-b141-28535f45527a,b7992060-36dc-463e-8062-ac82f4536315,Taxable Brokerage,K. Beard Taxable Brokerage,USD,2024-05-25,Active
+acc_00b14d56-2c93-4d59-bda2-af4e324f1b85,b7992060-36dc-463e-8062-ac82f4536315,Joint Account,K. Beard Joint Account,USD,2022-07-31,Active
+acc_6be80de8-cf71-4c6f-b992-76bfe47aac53,b7992060-36dc-463e-8062-ac82f4536315,Retirement (IRA),K. Beard Retirement (IRA),USD,2024-02-25,Active
+acc_bae0c5fc-5767-4115-bcb6-33fbfa5e7170,b7992060-36dc-463e-8062-ac82f4536315,Joint Account,K. Beard Joint Account,USD,2022-11-20,Active
+acc_ffeed6e0-78d0-40ba-a6b1-cf07df5db3e1,2e03cc72-fd0d-495c-9cc2-0dc93e7b3feb,Trust,K. Smith Trust,USD,2024-12-15,Active
+acc_cba66aa3-5357-443d-bee4-fc28959058ec,2e03cc72-fd0d-495c-9cc2-0dc93e7b3feb,Retirement (IRA),K. Smith Retirement (IRA),USD,2023-01-16,Active
+acc_c21a5724-d6bc-4dbf-9152-5c5d0e451c6b,2e03cc72-fd0d-495c-9cc2-0dc93e7b3feb,Retirement (IRA),K. Smith Retirement (IRA),USD,2022-09-07,Active
+acc_d9391d3d-9c40-4fa6-b24b-ef9b0c86d53e,52867505-7f3a-4584-bdfe-293f333845a0,Joint Account,J. Gonzalez Joint Account,USD,2025-01-23,Active
+acc_52b9ab56-dc4a-484b-9c1d-e7daea35fdf7,52867505-7f3a-4584-bdfe-293f333845a0,Retirement (IRA),J. Gonzalez Retirement (IRA),USD,2024-12-19,Active
+acc_1824881c-3390-4714-bc43-cbe793d9a193,52867505-7f3a-4584-bdfe-293f333845a0,Retirement (IRA),J. Gonzalez Retirement (IRA),USD,2025-05-21,Active
+acc_467d18aa-cc65-464a-a7b8-171ad226bc1a,52867505-7f3a-4584-bdfe-293f333845a0,Retirement (IRA),J. Gonzalez Retirement (IRA),USD,2024-09-26,Active
+acc_8f0520b8-4b3a-4245-8b1d-baa45aa6a38f,78471d6c-7f21-4fcd-8d75-150db6989a28,Joint Account,R. Brown Joint Account,USD,2025-05-23,Active
+acc_d4da4122-2c8c-496d-9d9a-2e283d87489f,78471d6c-7f21-4fcd-8d75-150db6989a28,Trust,R. Brown Trust,USD,2025-06-10,Active
+acc_5026b36e-80d0-49fa-9c05-d9a9b40236b8,6ef9372a-0d59-4c08-bf66-2b45bba6d020,Taxable Brokerage,N. Clark Taxable Brokerage,USD,2024-07-16,Active
+acc_83f6535e-d3b9-4efd-8c89-918f2622529a,17ebb1ef-8b19-458f-ab2d-e502a0c87d9f,Joint Account,J. Smith Joint Account,USD,2023-06-20,Active
+acc_9f9e4220-536e-4042-b08f-8a467ad5acaf,17ebb1ef-8b19-458f-ab2d-e502a0c87d9f,Joint Account,J. Smith Joint Account,USD,2023-09-19,Active
+acc_ae8a094e-38b6-4568-a3b6-fe6aa55a1bb9,17ebb1ef-8b19-458f-ab2d-e502a0c87d9f,Trust,J. Smith Trust,USD,2023-08-28,Active
+acc_634150f2-c3f2-4029-ae35-58f7004f7bae,17ebb1ef-8b19-458f-ab2d-e502a0c87d9f,Taxable Brokerage,J. Smith Taxable Brokerage,USD,2024-09-25,Active
+acc_807b50d3-d414-47b8-bd34-beb5dd24124b,17ebb1ef-8b19-458f-ab2d-e502a0c87d9f,Retirement (IRA),J. Smith Retirement (IRA),USD,2024-06-08,Active
+acc_06408ed5-fd2b-4bb4-a24e-95ebbb4c3d70,b3a1a6b3-baf4-49b3-aaaa-f03ffe7187f9,Taxable Brokerage,M. Larson Taxable Brokerage,USD,2025-05-09,Active
+acc_6ee6abb0-91b0-4e61-90bf-b3c9c222c9d4,b3a1a6b3-baf4-49b3-aaaa-f03ffe7187f9,Joint Account,M. Larson Joint Account,USD,2025-02-12,Active
+acc_c30933f6-9361-44b8-8436-d3d97f6a225a,b3a1a6b3-baf4-49b3-aaaa-f03ffe7187f9,Retirement (IRA),M. Larson Retirement (IRA),USD,2025-01-26,Active
+acc_5cdaf1e5-26cd-48d3-be45-602fba536c43,b3a1a6b3-baf4-49b3-aaaa-f03ffe7187f9,Joint Account,M. Larson Joint Account,USD,2025-05-11,Active
+acc_a2c32f95-53f2-484a-bb19-53265648d17d,b3a1a6b3-baf4-49b3-aaaa-f03ffe7187f9,Joint Account,M. Larson Joint Account,USD,2024-11-08,Active
+acc_9a8527ac-e5cf-447c-9bf6-0197117ed2c9,2d6f0867-5f60-4897-8838-49e378f136e7,Trust,R. Ruiz Trust,USD,2022-03-19,Active
+acc_63432d7b-9663-4c64-9e3a-3aadc96fd1ce,2d6f0867-5f60-4897-8838-49e378f136e7,Taxable Brokerage,R. Ruiz Taxable Brokerage,USD,2023-04-05,Active
+acc_2a079c4a-5d79-489e-8d99-8447cd843d13,a3c9ca2d-dbbe-4c7e-b344-971080f7fb04,Joint Account,K. Brown Joint Account,USD,2024-10-19,Active
+acc_458eddd7-68c7-4107-a184-bf4d94824513,a3c9ca2d-dbbe-4c7e-b344-971080f7fb04,Joint Account,K. Brown Joint Account,USD,2024-08-01,Active
+acc_00561f55-5ee9-4146-b5be-5975fe9edbb0,a3c9ca2d-dbbe-4c7e-b344-971080f7fb04,Retirement (IRA),K. Brown Retirement (IRA),USD,2023-06-09,Active
+acc_c1e95676-da57-405c-a123-a88abfe32dbc,a3c9ca2d-dbbe-4c7e-b344-971080f7fb04,Joint Account,K. Brown Joint Account,USD,2024-10-13,Active
+acc_f729a8fe-d2e7-4e27-a834-c862fa32abcd,91702aab-09c4-4b31-aac3-eb9d04791bdd,Joint Account,V. Colon Joint Account,USD,2025-05-20,Active
+acc_8f048f17-9c7b-4aae-994b-95df76dddb7c,91702aab-09c4-4b31-aac3-eb9d04791bdd,Joint Account,V. Colon Joint Account,USD,2024-10-13,Active
+acc_444df128-6439-4b1c-8154-b48c74929d80,91702aab-09c4-4b31-aac3-eb9d04791bdd,Taxable Brokerage,V. Colon Taxable Brokerage,USD,2025-03-31,Active
+acc_cd2d9c89-98ad-4266-b58d-b467ffd5067a,91702aab-09c4-4b31-aac3-eb9d04791bdd,Taxable Brokerage,V. Colon Taxable Brokerage,USD,2024-12-11,Active
+acc_0391a1ef-636c-4c95-b7fb-b26fe8d4b120,91702aab-09c4-4b31-aac3-eb9d04791bdd,Trust,V. Colon Trust,USD,2024-09-11,Active
+acc_8ead4ec5-9912-4685-bf7e-fff34cc169d6,a633cc63-4381-448d-8da1-e64c1463b5c3,Taxable Brokerage,M. Newman Taxable Brokerage,USD,2021-09-27,Active
+acc_5a5402a0-b4d6-45d6-8a52-e8a8c86f35f5,a633cc63-4381-448d-8da1-e64c1463b5c3,Joint Account,M. Newman Joint Account,USD,2025-02-04,Active
+acc_83254dd7-1367-4d15-845b-498227db3b94,a633cc63-4381-448d-8da1-e64c1463b5c3,Trust,M. Newman Trust,USD,2021-12-09,Active
+acc_d453a373-bec5-478b-95e2-df4617558d9d,8f66810a-7aa7-4548-86d3-3422f3548ec5,Taxable Brokerage,M. Mcmillan Taxable Brokerage,USD,2022-10-07,Active
+acc_80db0f0b-210c-4dfc-ae94-5e9aa0ff1752,8f66810a-7aa7-4548-86d3-3422f3548ec5,Trust,M. Mcmillan Trust,USD,2024-02-09,Active
+acc_327ef63a-34c7-421f-b1e0-f70c7ff2876f,8f66810a-7aa7-4548-86d3-3422f3548ec5,Taxable Brokerage,M. Mcmillan Taxable Brokerage,USD,2025-03-27,Active
+acc_a6fd9745-5ba2-4e1b-9370-6fe704ea6307,8f66810a-7aa7-4548-86d3-3422f3548ec5,Trust,M. Mcmillan Trust,USD,2023-10-26,Active
+acc_a9a3f237-5376-4618-a77f-8fee247b010c,8f66810a-7aa7-4548-86d3-3422f3548ec5,Trust,M. Mcmillan Trust,USD,2025-03-20,Active
+acc_23228882-f32b-4a5e-97d1-6ac221ba3c28,0096c404-35b0-407b-a87f-74a140cf5f6e,Joint Account,M. Chan Joint Account,USD,2022-04-12,Active
+acc_436fbdf7-2671-41fd-b208-b7d1e863c87c,0096c404-35b0-407b-a87f-74a140cf5f6e,Trust,M. Chan Trust,USD,2024-07-22,Active
+acc_08f42af7-17fd-4b69-b74e-e2dae9973900,0096c404-35b0-407b-a87f-74a140cf5f6e,Taxable Brokerage,M. Chan Taxable Brokerage,USD,2023-08-04,Active
+acc_3f509037-8837-4f1d-b6d9-2f07a9aa9ae6,f0dfe5ae-b965-4563-8d32-122166f4ce66,Retirement (IRA),E. Martinez Retirement (IRA),USD,2025-04-27,Active
+acc_8921f083-3be6-4945-bb5c-26fabfcf0fbc,f0dfe5ae-b965-4563-8d32-122166f4ce66,Retirement (IRA),E. Martinez Retirement (IRA),USD,2025-04-02,Active
+acc_43417cbd-2b73-4578-a7bd-cd8a20019bf8,f0dfe5ae-b965-4563-8d32-122166f4ce66,Joint Account,E. Martinez Joint Account,USD,2024-12-11,Active
+acc_117ed66b-807d-4572-92de-3b147cf32bb6,aa0d0ece-9009-4415-9389-bd7738ee3c3d,Retirement (IRA),S. Jones Retirement (IRA),USD,2024-09-17,Active
+acc_44618c42-aac8-4bf3-8127-785b23e31610,aa0d0ece-9009-4415-9389-bd7738ee3c3d,Taxable Brokerage,S. Jones Taxable Brokerage,USD,2024-11-07,Active
+acc_3cce95cc-776c-4301-8a1b-a4f74616998b,aa0d0ece-9009-4415-9389-bd7738ee3c3d,Retirement (IRA),S. Jones Retirement (IRA),USD,2024-06-14,Active
+acc_ac0e4382-890e-46fd-8f5d-e39bf23cbc52,aa0d0ece-9009-4415-9389-bd7738ee3c3d,Trust,S. Jones Trust,USD,2024-12-23,Active
+acc_7a3d3673-217c-49c4-82fa-40be2b59d8e8,aa0d0ece-9009-4415-9389-bd7738ee3c3d,Joint Account,S. Jones Joint Account,USD,2024-06-03,Active
+acc_bfbcc07a-dbd6-4988-8fcc-c317a5072945,943fd6f5-28d8-45f8-96b7-898819c1092a,Taxable Brokerage,C. Garcia Taxable Brokerage,USD,2022-06-28,Active
+acc_03a03683-9465-49af-9bbe-41bb31f337f6,edb5762a-964a-479e-987f-2bfefb764476,Trust,L. Marquez Trust,USD,2025-05-10,Active
+acc_defe85a7-f9e8-4afd-b6c9-ba5792ab09f4,ee43ff3d-f444-427e-90a3-35bc69d6999b,Trust,R. Vasquez Trust,USD,2024-03-21,Active
+acc_73627536-ed23-47d1-9d8b-fa9c9c3e8765,ee43ff3d-f444-427e-90a3-35bc69d6999b,Retirement (IRA),R. Vasquez Retirement (IRA),USD,2023-03-04,Active
+acc_647da6d9-cc74-4e5a-96dd-54f74ee71c34,ee43ff3d-f444-427e-90a3-35bc69d6999b,Trust,R. Vasquez Trust,USD,2023-03-27,Active
+acc_7d8d2ac1-9ec9-4c31-be71-c6c81e0369fd,ee43ff3d-f444-427e-90a3-35bc69d6999b,Joint Account,R. Vasquez Joint Account,USD,2024-04-04,Active
+acc_b5f84bb5-470d-472c-94db-20711aa7d3a4,ee43ff3d-f444-427e-90a3-35bc69d6999b,Trust,R. Vasquez Trust,USD,2021-12-08,Active
+acc_87b5e0d4-eb34-49df-8097-ac035f064124,2b24950b-2122-41bb-86b4-35e2ca7c066e,Trust,S. Marshall Trust,USD,2025-03-18,Active
+acc_579cdab5-7b64-4228-8d43-d9d0aa3a83bc,14971a9f-a24e-4c21-ab1e-cc69059b5534,Retirement (IRA),J. Madden Retirement (IRA),USD,2025-04-28,Active
+acc_021edfbb-4876-42bd-8c08-0c24d984287a,14971a9f-a24e-4c21-ab1e-cc69059b5534,Taxable Brokerage,J. Madden Taxable Brokerage,USD,2024-09-16,Active
+acc_c6d14329-44dc-4dc0-915c-677ee68c6d20,a6658890-44ed-4ec6-8cef-1cda424f51c9,Trust,A. Nguyen Trust,USD,2025-05-27,Active
+acc_ca05865a-0f29-41f0-851a-cad7dc20b97f,b33ea279-9ffd-4cdd-856d-68730740fa04,Joint Account,J. Flores Joint Account,USD,2023-07-20,Active
+acc_daafce8f-6ce6-4bc5-bb78-e3d2b5172f38,b33ea279-9ffd-4cdd-856d-68730740fa04,Trust,J. Flores Trust,USD,2024-05-19,Active
+acc_4e4d9539-d63a-4313-ac98-058203229fb4,b33ea279-9ffd-4cdd-856d-68730740fa04,Retirement (IRA),J. Flores Retirement (IRA),USD,2024-07-08,Active
+acc_77c4fd62-62f8-4901-a1ce-1d2f3ca9828d,b33ea279-9ffd-4cdd-856d-68730740fa04,Taxable Brokerage,J. Flores Taxable Brokerage,USD,2024-06-24,Active
+acc_fded97d8-0bd1-4a8b-a252-081a3b25b906,b33ea279-9ffd-4cdd-856d-68730740fa04,Retirement (IRA),J. Flores Retirement (IRA),USD,2023-06-21,Active
+acc_21ff9827-637d-4b9d-907c-3417ce2a3c56,19601e8d-4b55-4be3-8743-adfcb5250aff,Trust,S. Smith Trust,USD,2025-01-01,Active
+acc_9c03e157-a905-428f-b2de-f098ae7af6c0,19601e8d-4b55-4be3-8743-adfcb5250aff,Trust,S. Smith Trust,USD,2025-06-09,Active
+acc_d3fbcee4-9b56-4141-8a19-93c4e2abb262,3e773aa8-4041-4651-8a15-f949b92ce5d7,Trust,M. Page Trust,USD,2024-04-14,Active

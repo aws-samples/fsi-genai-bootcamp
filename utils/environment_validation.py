@@ -190,4 +190,3 @@ def validate_model_access(required_models):
         rprint(
             "[#ef233c]One or more models are not accessible. Please enable access in the AWS Console as explained in the workshop instructions.[/#ef233c]"
         )
-
