@@ -5,6 +5,7 @@ from typing import Any, Sequence
 
 import duckdb
 import jwt
+import re
 import uvicorn
 
 from mcp.server.auth.provider import AccessToken
@@ -230,6 +231,17 @@ def get_data_catalog(context: Context) -> str:
     return DATA_CATALOG
 
 
+def is_read_only_query(query: str) -> bool:
+    """
+    Returns True if the query is a read-only SELECT (including CTEs), False otherwise.
+    Ignores leading whitespace and SQL comments.
+    """
+    # Remove leading SQL comments and whitespace
+    cleaned = re.sub(r"^\s*(--[^\n]*\n|\s)*", "", query, flags=re.MULTILINE)
+    # Check if it starts with SELECT or WITH (case-insensitive)
+    return cleaned.strip().lower().startswith(("select", "with"))
+
+
 @mcp.tool(annotations={"required_scope": ["portfolio_analyst"]})  # type: ignore
 def run_custom_query(query: str, context: Context) -> str:
     """Run a custom SQL query on the wealth database.
@@ -237,7 +249,7 @@ def run_custom_query(query: str, context: Context) -> str:
     - query: The SQL query to execute. Only SELECT queries are allowed.
     """
 
-    if not query.strip().lower().startswith("select"):
+    if not is_read_only_query(query):
         raise ValueError("Only SELECT queries are allowed.")
     try:
         result = DATABASE.execute(query).fetchdf()
